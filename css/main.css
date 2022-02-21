@@ -1,0 +1,329 @@
+/* ==========================================================================
+   corps style
+   ========================================================================== */
+
+*{
+   box-sizing: border-box;
+}
+
+body{
+   font-family: 'Raleway', sans-serif;
+   font-weight:400;
+   min-height: 100vh;
+   width: 100vw;
+   color:white;
+   background-color: #1C1B1B;
+}
+
+header{
+   z-index:20;
+   position: fixed;
+   width: 60%;
+   display: flex;
+   justify-content: space-between;
+   padding: 0.5rem 1.5rem;
+   z-index: 75;
+}
+
+article{
+   position: relative;
+   width: 60%;
+   overflow: hidden;
+}
+
+aside{
+   color:black;
+   position: relative;
+   width: 40%;
+   min-width: 220px;
+   background-color: white;
+   height: 100vh;
+   overflow:auto;
+}
+
+img{
+   max-width: 100%;
+}
+
+section{
+   display: flex;
+   width: 100vw;
+   height: 100vh;
+}
+
+/* ==========================================================================
+   Header style
+   ========================================================================== */
+
+.logo {
+   margin: 5px;
+   padding: 5px;
+}
+
+header button{
+   background-color: rgba(0,0,0,0);
+   border: none;
+}
+/* ==========================================================================
+   Button style
+   ========================================================================== */
+
+button{
+   margin: 5px;
+   padding: 5px;
+   cursor: pointer;
+}
+
+button:disabled,
+button[disabled],
+.disabled{
+    cursor: auto;
+    opacity:0.5;
+}
+
+button.bt, input[type="submit"]{
+   padding: 10px;
+   background-color: #736AE4;
+   border: #736AE4 solid 2px;
+   color: white;
+   border-radius: 10px;
+   text-transform: uppercase;
+}
+
+button.bt:hover, input[type="submit"]:hover{
+   background-color: white;
+   color:  #736AE4;
+}
+
+.close{
+   background-color: rgba(0,0,0,0);
+   border: none;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+}
+
+button.ghost_button, button.reverse{
+   border:  #736AE4 1px solid;
+   background-color: white;
+   color:  #736AE4;
+}
+
+button.reverse:hover:not([disabled]){
+   color: white;
+   background-color: #444;
+}
+
+/* ==========================================================================
+   structure class style
+   ========================================================================== */
+
+.sr-only {
+   border: 0;
+   clip: rect(0, 0, 0, 0);
+   height: 1px;
+   margin: -1px;
+   overflow: hidden;
+   padding: 0;
+   position: absolute;
+   white-space: nowrap;
+   width: 1px;
+   /* 1 */
+}
+
+.row{
+   display: flex;
+   flex-direction: row;
+   align-items:center;
+}
+
+.col{
+   display: flex;
+   flex-direction: column;
+}
+
+.center{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.justify{
+   align-items: center;
+   text-align: center;
+}
+
+.hide{
+   display: none !important;
+}
+
+.h100{
+   height: 100%;
+}
+
+.container{
+   position: relative;
+   width: 100%;
+   padding: 1rem 5%;
+}
+
+.fixe{
+   position: fixed;
+   top:0;
+   left: 0;
+   background-color: inherit;
+   overflow: auto;
+}
+
+.relative{
+   position: relative;
+}
+
+.reverse{
+   color: white;
+   background-color: #444444;
+}
+
+/* ==========================================================================
+   Accordion style (the right section)
+   ========================================================================== */
+.aside_mode{
+   max-width: 99%;
+   height: 100%;
+   overflow:auto;
+}
+
+.aside_mode > .accordion{
+   height: calc(100% - 80px);
+}
+
+.accordion{
+   max-width:100%;
+}
+
+.accordion > h2{
+   cursor: pointer;
+   border-top: solid 1px #E3E3E3;
+   margin: 0px;
+   padding: 5px;
+}
+
+.accordion button{
+   margin: 0px;
+   width: 100%;
+   background-color: rgba(0,0,0,0);
+   border: none;
+   text-align: left;
+   font-size: 24px;
+}
+
+.accordion button:hover {
+   background-color: #E3E3E3;
+}
+
+.accordion button > span + span{
+   display: block;
+   font-size: 1.2rem;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 400;
+}
+
+h2 button{
+   font-family: 'Montserrat', sans-serif;
+   font-weight:600;
+}
+
+.arrow-container{
+   padding: 2px;
+   margin: 5px;
+}
+
+.rot90{
+   position: relative;
+   transform: rotate(90deg) translate(50%,-10%) scaleY(0.75);
+}
+
+.accordionSection{
+   max-height:100vh;
+   height: calc(100% - 275px);
+   min-height: 60px;
+   overflow:auto;
+   padding:0px;
+   margin-left: 30px;
+}
+
+/* ==========================================================================
+   Other section style (actually no-classed)
+   ========================================================================== */
+
+#section-select{
+   z-index:100;
+}
+
+.line-50{
+   position: absolute;
+   top: 17px; /* height de step-number/2 + 5px (marge du conteneur de step-number)*/
+   left: 50%;
+   z-index: -1;
+   width: 30%;
+   height: 0px;
+   border: 1px white solid;
+   transform: translateX(-50%);
+}
+
+#step-1{
+   max-width: 100%;
+   padding-bottom: 4.5rem;
+}
+
+.gallery{
+   width: 100%;
+   max-width: 100%;
+}
+
+.img_toSelect > input {
+   visibility: hidden;
+   width: 0px;
+}
+
+.img_toSelect {
+   padding: 0px;
+}
+
+.valide_select{
+   position: absolute;
+   top: -4px;
+   left: -4px;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   width: calc(100% + 4px);
+   height: calc(100% + 4px);
+   border: #736AE4 solid 2px;
+   background-color: black;
+}
+
+.nextSection{
+   position: fixed;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 10;
+   width: 100%;
+   max-height: 90px;
+   background-color: #736AE4;
+   padding: 1rem;
+   text-align: center;
+}
+
+#imgSelectContainer img{
+   border: solid 2px rgba(0,0,0,0);
+   margin:5px;
+   width: 64px;
+}
+
+#imgSelectContainer img:hover{
+   border: solid 2px #736AE4;
+}

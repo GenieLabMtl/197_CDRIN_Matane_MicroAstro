@@ -1,0 +1,222 @@
+{
+  "___comments___": {
+    "generic": [
+      "This file is use by translator.js",
+      "It read each section 'dynamicText', 'staticText', 'staticAlt' and 'staticVal'.",
+      "For each of them, it read their sub attribute like 'h1-text' of the 'staticText'.",
+      "The value of its sub attributes is the contain to put in the element.",
+      "The name of its sub attributes is the selector to get the element to insert the value.",
+      "For example, 'h1-text' target all elements with the class 'h1-text'.",
+      "In this case, only the h1 as this class, but some time it's several elements.",
+      "For exemple, 'sub-title-what-happen' target several elements."
+    ],
+    "dynamicText": [
+      "This section is for the translation of the text generate by the script.",
+      "Example: the history element of the user action"
+    ],
+    "dynamicText sub-Template": [
+      "Some element in the dynamic text use some variable.",
+      "One example is text-img-generate-by-x.",
+      "This example use the variable {x}.",
+      "this variable will be replaced by a value from a sub template.",
+      "In this way, the reproduction of the templates is slightly simplified since it is possible to find the sub-template."
+    ],
+    "staticText": [
+      "This section is for the translation of the text initial of the html file.",
+      "Example: the title of the page."
+    ],
+    "staticAlt": [
+      "This section is for the translation of the text alternatif (the alt attribute) initial of the html file.",
+      "Example: the alternative text of the loading image 'loading'."
+    ],
+    "staticVal": [
+      "This section is for the translation of the value of element of the html file.",
+      "This is mainly use for the submit button.",
+      "Example: the submit button 'generate' of the prototype 1."
+    ]
+  },
+  "dynamicText": {
+    "sub-Template": {
+      "text-cross": "Mix type 1",
+      "text-linear-interpolation": "Mix type 2",
+      "text-hypersphere-interpolation": "Mix type 3",
+      "text-change-bg": "Background",
+      "text-zoom": "Zoom",
+      "text-side-step": "Lateral",
+
+      "category-plural": "categories",
+      "category-singular": "category"
+    },
+
+    "pop-up-need-less-cat-dynamic":" up to",
+    "pop-up-need-more-cat-dynamic":" at least",
+
+    "text-img-generate-by-x": "Generate image with {x}",
+
+    "alert-max-selection-image": "Too many categories selected",
+    "selection-image-text": "This category is selected",
+    "desc-category-group": "image of the category group #{#}",
+
+    "alt-selected-image": "choosed image of the category #{#}",
+    "alt-shared-image": "Your creation named {_t_}",
+
+    "history-selection-image-text-plural": "{#} images are selected",
+    "history-selection-image-text-single": "{#} image is selected",
+
+    "pop-up-need-less-cat-main-text": "You can only keep{?m} {#} for ({_m_}), click the ones you would like to keep using.",
+    "pop-up-need-more-cat-main-text": "You must select{?m} {#} {_m_}.",
+    "old_pop-up-need-more-cat-main-text": "You must select{?m} {#} {_m_}.",
+
+    "text-workshop": "Workshop name: {_n_}",
+
+    "label-noise":"Noise",
+    "label-categories":"Categories",
+    "label-truncation":"Truncation",
+    "label-closeness":"Closeness",
+    "label-speed":"Speed",
+    "label-duration":"Duration",
+    "label-num-iter":"Number of iterations",
+    "label-isGif":"Is a Gif",
+    "label-loop":"Loop",
+
+    "error-doesnt-have-param-x": "It doesn't have the param {x}.",
+    "error-some-data-miss": "Some meta data is missing.",
+    "error-json-file": "The json file is not found.", 
+    
+    "button-new-selection-image-plural": "Try with other images",
+    "button-new-selection-image-single": "Try with another image" 
+  },
+  "staticText": {
+    "h1-text": "Ai Picasso by GenieLab.",
+    "title-your-creation": "Your creation",
+
+    "step-2-title-min": "Select categories",
+
+    "title-step-2": "Now, choose the images you would like to play",
+    "text-step-2-description": "What’s going on here? This will be the base of your creation. Choose up to 5 images",
+    "text-actual-group-categories": "The images are from the group categories #",
+    "text-ready-go": "OK",
+    "text-categories-selected-list": "The categories selected: ",
+
+    "title-activity": "Instructions",
+    "sub-title-activity": "Step by step and lexicon",
+    "title-history": "History",
+    "title-parameter": "Parameters",
+    "sub-title-parameters": "Create here",
+
+    "text-choose-lang": "Choose a language",
+    "text-loading": "Loading",
+    "text-loading-fail": "Come back later",
+
+    "title-information": "Information",
+    "sub-title-information": "Everything about your creation",
+    "sub-title-what-has-been-used":"What has been used",
+    "sub-title-where-created": "Where was this created",
+    "sub-title-how-find-cloud": "How to find it in the cloud",
+
+    "title-snippet": "Explanations",
+    "sub-title-snippet": "How does it work?",
+    "sub-title-what-happen": "What just happen",
+    "sub-title-math-behind": "The Math behind",
+    "sub-title-code-copy": "The last text copy from the snip",
+
+    "copy-code-bt": "Copy the code button",
+
+    "for-change-bg": "for the change background",
+    "complete-description-change-bg": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla sollicitudin metus, in mattis odio venenatis in. Vestibulum vitae tincidunt tortor, quis vulputate sapien. Etiam in lacinia metus. Nulla sed aliquet felis. Integer nec tortor ex. Sed in laoreet eros, et hendrerit felis. Duis laoreet, odio iaculis convallis euismod, eros massa volutpat odio, non commodo mauris nisl ac lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sollicitudin arcu enim, quis pellentesque dolor interdum eu. Sed eget egestas dui. Curabitur tincidunt eget ante tempus efficitur. Morbi dictum ornare neque sit amet viverra. Sed semper aliquam sagittis. Suspendisse non ante pretium, condimentum tortor nec, vulputate risus. Sed ipsum orci, convallis non viverra eget, egestas ac magna. Nunc et euismod massa.",
+    "for-hypersphere-interpolation": "for the hypersphere interpolation",
+    "complete-description-hypersphere-interpolation": "the hypersphere interpolation...",
+    "for-linear-interpolation": "for the linear interpolation",
+    "complete-description-linear-interpolation": "The linear interpolation...",
+    "for-cross": " for the cross image",
+    "complete-description-cross": "The cross image...",
+    "for-zoom": " for the zoom image",
+    "complete-description-zoom": "The zoom image...",
+    "for-side-step": "for the side step",
+    "complete-description-side-step": "side...",
+
+    "download-icone-text": "Download the last generate image.",
+    "download-icone-text-warning": "Note: currently, there is no image to download.",
+    "title-download-pop-up-p1": "Download your",
+    "title-download-pop-up-p2": "current creation",
+    "text-download-image": "Download image",
+    "text-download-image-default-dim": "(512 x 512)",
+
+    "share-icone-text": "Share the last generate image.",
+    "share-icone-text-warning": "Note: currently, there is no image to share.",
+    "title-share-pop-up": "Share this to the world \uD83D\uDE80",
+
+    "share-see-work": "See your shared work",
+    "see-normal-aside": "Return to the previous menu",
+
+    "text-cross": "Mix type 1",
+    "text-linear-interpolation": "Mix type 2",
+    "text-hypersphere-interpolation": "Mix type 3",
+    "text-change-bg": "Background",
+    "text-zoom": "Zoom",
+    "text-side-step": "Lateral",
+
+    "text-search": "Search",
+    "text-close": "Close",
+    "text-cancel": "Cancel",
+    "text-continue": "Continue",
+    "text-Yes": "Yes",
+
+    "text-before-start": "You haven't started yet...",
+    "text-to-start": "GET STARTED",
+    "text-havent-creation": "You haven't made any yet",
+
+    "text-your-selection": "The selection :",
+
+    "tip-title": "Quick Tips",
+    "tip-param-right-side": "You can adjust the parameters in the right-side panel.",
+    "tip-category-order": "You can change the order of the categories by clicking on a category in the \"your category\" section and then clicking on another category next to it.",
+    "tip-must-choose-method": "You must choose one method to begin.",
+    "tip-must-choose-online-creation": "You must choose one of your uploaded creation to see its data.",
+    "tip-zoom": "To zoom when there is a loop with multiple images, press the control button (ctrl) on the keyboard.",
+
+    "label-name-creation": "Name of your creation :",
+    "label-description-creation": "Describe what you have created :",
+    "label-creator-creation": "Creator :",
+    "label-date-creation": "Created on :",
+
+    "label-truncation": "Truncation :",
+    "label-number-iteration": "Number of iterations :",
+    "label-is-gif": "It's a gif",
+    "label-duration":"Total duration (in seconds)",
+
+    "label-resolution": "resolution",
+
+    "label-zoom-slider": "Zoom :",
+
+    "text-id-pp": "ID :",
+
+    "title-change-method-pop-up": "Choosing categories",
+
+    "bt-look-good": "OK",
+    "bt-choose-new-img":"Go to category selection",
+    "bt-never-mind": "Cancel",
+
+    "warning-change-whitout-save": "You are about to change method & generate a new set of images.",
+    "wish-to-do": "What would you like to do?",
+    "text-save-continue": "Save & continue",
+    "text-continue-without-save": "Continue without saving"
+  },
+  "staticAlt": {
+    "alt-loading": "Loading"
+  },
+  "staticVal": {
+      "img-generate-submit": "Generate",
+      "img-resize-submit": "Resize image",
+      "img-share-submit": "Let’s go!"
+  },
+  "staticLongText": {
+    "complete-instructions": [
+      "<b>Step 1</b>: Go to the Parameters tab.\n",
+      "<b>Step 2</b>: Give a name to your creation and assign the parameters.\n",
+      "<b>Step 3</b>: Click on Generate.\n",
+      "<b>Step 4</b>: Read the generated text on the left of the screen.\n",
+      "<b>Step 5</b>: Save your creation by clicking on the button at the top right of your screen.\n"
+    ]
+  }
+}

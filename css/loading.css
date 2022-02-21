@@ -1,0 +1,174 @@
+
+/* ==========================================================================
+   Corps style
+   ========================================================================== */
+
+.loadingElem {
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: auto;
+    height: 100%;
+    color: #ffffff;
+    z-index: 50;
+}
+
+.bg_loading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.bg_loading_black{
+    background-color: rgba(0,0,0,1);
+}
+
+.loadingAnimation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 2rem 0;
+    margin: 0%;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   End corps style
+   ========================================================================== */
+/* ==========================================================================
+   Scale style
+   ========================================================================== */
+
+.x2{
+    font-size: 1.5rem;
+}
+
+.x2 .loadingAnimation{
+    width: 50%;
+    transform: scale(2) translate(25%, 0);
+    margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   End scale style
+   ========================================================================== */
+/* ==========================================================================
+   Dots style
+   ========================================================================== */
+.dot-up-down{
+    position: relative;
+    top:0px;
+    left:0px;
+    height: 24px;
+    width: 24px;
+    margin: 5px;
+    border-radius: 50%;
+    animation: upDown 1s infinite linear;
+}
+
+.dot-up-down.dot0{
+    animation-delay: 0s;
+    animation-duration: 1.2s;
+    background-color: #736AE4;
+}
+
+.dot-up-down.dot1{
+    animation-delay: -0.25s;
+    animation-duration: 1.2s;
+    background-color: #F9D748;
+}
+
+.dot-up-down.dot2{
+    animation-delay: -0.5s;
+    animation-duration: 1.2s;
+    background-color: #5BCFC1;
+}
+
+.dot-up-down.dot3{
+    animation-delay: -0.75s;
+    animation-duration: 1.2s;
+    background-color: #D67280;
+}
+
+/* ==========================================================================
+   End dots style
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Loading text dots style
+   ========================================================================== */
+
+span.fadeIn3dot{
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0);
+    animation: dot3FadeIn 0.75s infinite linear;
+    animation-direction: alternate;
+    align-self: flex-end;
+    margin-bottom: 0.1rem;
+}
+
+/* ==========================================================================
+   End loading text dots style
+   ========================================================================== */
+
+/* ==========================================================================
+   Keyframes animation style
+   ========================================================================== */
+@keyframes upDown {
+  0% {
+    top:0px;
+  }
+  24% {
+    top:20px;
+  }
+  26% {
+    top:20px;
+  }
+  50% {
+    top:0px;
+  }
+  74% {
+    top:-20px;
+  }
+  76%{
+     top:-20px;
+  }
+  100% {
+    top:0px;
+  }
+}
+
+@keyframes dot3FadeIn {
+  0% {
+    background-color: rgba(0,0,0,0);
+    box-shadow: 4px 0px 0px 0px rgba(0,0,0,0), 8px 0px 0px 0px rgba(0,0,0,0);
+  }
+  25% {
+    background-color: white;
+    box-shadow: 4px 0px 0px 0px rgba(0,0,0,0), 8px 0px 0px 0px rgba(0,0,0,0);
+  }
+  50% {
+    background-color: white;
+    box-shadow: 4px 0px 0px 0px white, 8px 0px 0px 0px rgba(0,0,0,0);
+  }
+  75% {
+    background-color: white;
+    box-shadow: 4px 0px 0px 0px white, 8px 0px 0px 0px white;
+  }
+  100% {
+    background-color: white;
+    box-shadow: 4px 0px 0px 0px white, 8px 0px 0px 0px white;
+  }
+}
+
+/* ==========================================================================
+   End keyframes animation style
+   ========================================================================== */

@@ -1,0 +1,222 @@
+{
+  "___comments___": {
+    "generic": [
+      "This file is use by translator.js",
+      "It read each section 'dynamicText', 'staticText', 'staticAlt' and 'staticVal'.",
+      "For each of them, it read their sub attribute like 'h1-text' of the 'staticText'.",
+      "The value of its sub attributes is the contain to put in the element.",
+      "The name of its sub attributes is the selector to get the element to insert the value.",
+      "For example, 'h1-text' target all elements with the class 'h1-text'.",
+      "In this case, only the h1 as this class, but some time it's several elements.",
+      "For exemple, 'sub-title-what-happen' target several elements."
+    ],
+    "dynamicText": [
+      "This section is for the translation of the text generate by the script.",
+      "Example: the history element of the user action"
+    ],
+    "dynamicText sub-Template": [
+      "Some element in the dynamic text use some variable.",
+      "One example is text-img-generate-by-x.",
+      "This example use the variable {x}.",
+      "this variable will be replaced by a value from a sub template.",
+      "In this way, the reproduction of the templates is slightly simplified since it is possible to find the sub-template."
+    ],
+    "staticText": [
+      "This section is for the translation of the text initial of the html file.",
+      "Example: the title of the page."
+    ],
+    "staticAlt": [
+      "This section is for the translation of the text alternatif (the alt attribute) initial of the html file.",
+      "Example: the alternative text of the loading image 'loading'."
+    ],
+    "staticVal": [
+      "This section is for the translation of the value of element of the html file.",
+      "This is mainly use for the submit button.",
+      "Example: the submit button 'generate' of the prototype 1."
+    ]
+  },
+  "dynamicText": {
+    "sub-Template": {
+      "text-cross": "croisement type 1",
+      "text-linear-interpolation": "croisement type 2",
+      "text-hypersphere-interpolation": "croisement type 3",
+      "text-change-bg": "l'arrière-plan",
+      "text-zoom": "zoom",
+      "text-side-step": "latéral",
+
+      "category-plural": "catégories",
+      "category-singular": "catégorie"
+    },
+
+    "pop-up-need-less-cat-dynamic":" au maximum",
+    "pop-up-need-more-cat-dynamic":" au moins",
+
+    "text-img-generate-by-x": "Générer une image avec {x}",
+
+    "alert-max-selection-image": "Il y a trop d'images sélectionnées",
+    "selection-image-text": "Cette catégorie est sélectionnée",
+
+    "alt-selected-image": "image choisie de la catégorie #{#}",
+    "alt-shared-image": "Your creation named {_t_}",
+
+    "history-selection-image-text-plural": "{#} images sont sélectionnées",
+    "history-selection-image-text-single": "{#} image est sélectionnée",
+    "desc-category-group": "image du groupe de catégorie #{#}",   
+
+    "pop-up-need-less-cat-main-text": "Vous ne pouvez que garder{?m} {#} {_m_}.",
+    "pop-up-need-more-cat-main-text": "Vous devez avoir{?m} {#} {_m_}.",
+
+    "text-workshop": "Nom de l'atelier: {_n_}",
+
+    "label-noise":"Bruit",
+    "label-truncation":"Truncation",
+    "label-closeness":"Proche",
+    "label-categories":"Catégories",
+    "label-speed":"Vitesse",
+    "label-duration":"Durée",
+    "label-num-iter":"Numbre d'iteration:",
+    "label-isGif":"C'est un Gif",
+    "label-loop":"boucle",
+
+    "error-doesnt-have-param-x": "Il n'a pas le param {x}.",
+    "error-some-data-miss": "Certaines métadonnées sont manquées.",
+    "error-json-file": "Le fichier json est introuvable.",
+    
+    "button-new-selection-image-plural": "Essayer avec d'autres images ",
+    "button-new-selection-image-single": "Essayer avec une autre image" 
+  },
+  "staticText": {
+    "h1-text": "Ai Picasso par GenieLab.",
+    "title-your-creation": "Votre création",
+
+    "step-2-title-min": "Selection d'images",
+
+    "title-step-2": "Maintenant, choisissez les images que vous souhaitez lire",
+    "text-step-2-description": "Que se passe t-il ici? Ce sera la base de votre création. Choisissez jusqu'à 5 images",
+    "text-actual-group-categories": "Les images viennent du groupe de catégories #",
+    "text-ready-go": "OK",
+    "text-categories-selected-list": "Les catégories sélectionnées: ",
+
+    "title-activity": "Instructions",
+    "sub-title-activity": "Étape par étape et lexique",
+    "title-history": "Historique",
+    "title-parameter": "Paramètres",
+    "sub-title-parameters": "Créez ici",
+
+    "text-choose-lang": "Choisir une langue",
+    "text-loading": "Chargement",
+    "text-loading-fail": "Veuillez réessayer plus tard",
+
+    "title-information": "Information",
+    "sub-title-information": "Tout sur votre création",
+    "sub-title-what-has-been-used":"Ce qui a été utilisé",
+    "sub-title-where-created": "Où cela a-t-il été créé",
+    "sub-title-how-find-cloud": "Comment le trouver dans le cloud",
+
+    "title-snippet": "Explications",
+    "sub-title-snippet": "Comment ça fonctionne?",
+    "sub-title-what-happen": "Que se passe-t-il juste",
+    "sub-title-math-behind": "Les mathématiques derrière",
+    "sub-title-code-copy": "La dernière copie de texte du snip",
+
+    "copy-code-bt": "Copie le code",
+
+    "for-change-bg": "pour le changement de fond",
+    "complete-description-change-bg": "Lorem ipsum dolor sit amet???, consectetur adipiscing elit. Vestibulum fringilla sollicitudin metus, in mattis odio venenatis in. Vestibulum vitae tincidunt tortor, quis vulputate sapien. Etiam in lacinia metus. Nulla sed aliquet felis. Integer nec tortor ex. Sed in laoreet eros, et hendrerit felis. Duis laoreet, odio iaculis convallis euismod, eros massa volutpat odio, non commodo mauris nisl ac lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec sollicitudin arcu enim, quis pellentesque dolor interdum eu. Sed eget egestas dui. Curabitur tincidunt eget ante tempus efficitur. Morbi dictum ornare neque sit amet viverra. Sed semper aliquam sagittis. Suspendisse non ante pretium, condimentum tortor nec, vulputate risus. Sed ipsum orci, convallis non viverra eget, egestas ac magna. Nunc et euismod massa.",
+    "for-hypersphere-interpolation": "pour l'interpolation hypersphérique",
+    "complete-description-hypersphere-interpolation": "L'interpolation hypersphérique...",
+    "for-linear-interpolation": "pour l'interpolation linéaire",
+    "complete-description-linear-interpolation": "l'interpolation linéaire...",
+    "for-cross": " Pour l'image croiser",
+    "complete-description-cross": "L'image croiser...",
+    "for-zoom": " Pour l'image zoom",
+    "complete-description-zoom": " l'image zoom...",
+    "for-side-step": "Pour le pas de côté",
+    "complete-description-side-step": "Pour le pas de côté...",
+
+    "download-icone-text": "Téléchargez la dernière image générée.",
+    "download-icone-text-warning": "Remarque: actuellement, il n'y a pas d'image à télécharger.",
+    "title-download-pop-up-p1": "Télécharge",
+    "title-download-pop-up-p2": "ta création",
+    "text-download-image": "Télécharge l'image",
+    "text-download-image-default-dim": "(512 x 512)",
+
+    "share-icone-text": "Partagez la dernière image générée.",
+    "share-icone-text-warning": "Remarque: actuellement, il n'y a pas d'image à partager.",
+    "title-share-pop-up": "Partagez ceci avec le monde \uD83D\uDE80",
+
+    "share-see-work": "Voir votre travail partagé",
+    "see-normal-aside": "Retourner au menu précédent",
+
+    "text-cross": "croisement type 1",
+    "text-linear-interpolation": "croisement type 2",
+    "text-hypersphere-interpolation": "croisement type 3",
+    "text-change-bg": "l'arrière-plan",
+    "text-zoom": "zoom",
+    "text-side-step": "latéral",
+
+    "text-search": "Recherche",
+    "text-close": "Fermer",
+    "text-cancel": "Annuler",
+    "text-continue": "Continue",
+    "text-Yes": "oui",
+
+    "text-before-start": "Vous n'avez pas encore commencé...",
+    "text-to-start": "COMMENCER",
+    "text-havent-creation": "Vous n'en avez pas encore fait",
+
+    "text-your-selection": "La sélection :",
+
+    "tip-title": "Petit conseil",
+    "tip-param-right-side": "Vous pouvez ajuster la température dans la section Paramètres",
+    "tip-category-order": "Vous pouvez changer l'ordre des catégories en cliquant sur une catégorie dans la section \" votre catégorie \"puis en cliquant sur la catégorie occupant la position où vous souhaitez déplacer la catégorie.",
+    "tip-must-choose-method": "Vous devez choisir une méthode...",
+    "tip-must-choose-online-creation": "Vous devez choisir une de vos création en ligne pour voir ces données.",
+    "tip-zoom": "Pour zoomer lorsqu'il y a une loop avec plus, appuyer sur le bouton controle (ctrl) du clavier.",
+
+    "label-name-creation": "Nom de votre création",
+    "label-description-creation": "Une certaine inscription peut être sympa",
+    "label-creator-creation": "Createur",
+    "label-date-creation": "Créé le",
+
+    "label-truncation": "Truncation :",
+    "label-number-iteration": "Nombre d'itérations :",
+    "label-is-gif": "C'est un gif",
+    "label-duration":"Durée total (en secondes)",
+
+    "label-resolution": "Résolution",
+
+    "label-zoom-slider": "Zoom:",
+
+    "text-id-pp": "ID: ",
+
+    "title-change-method-pop-up": "Choix des catégories",
+
+    "bt-look-good": "OK",
+    "bt-choose-new-img":"Aller à la sélection des catégories",
+    "bt-never-mind": "Annuler",
+
+    "warning-change-whitout-save": "Vous êtes sur le point de changer de méthode différente et de générer un nouvel ensemble d'images.",
+    "wish-to-do": "Qu'est-ce que tu aimerais faire?",
+    "text-save-continue": "Enregistrer et continuer",
+    "text-continue-without-save": "Continuer sans enregistrer"
+  },
+  "staticAlt": {
+    "alt-loading": "Chargement"
+  },
+  "staticVal": {
+      "img-generate-submit": "Produire",
+      "img-resize-submit": "Redimensionner l'image",
+      "img-share-submit": "Allons-y!"
+  },
+  "staticLongText": {
+    "complete-instructions": [
+      "<b>Étape 1</b>: Choisir un algorithme à la gauche de l'écran.\n",
+      "<b>Étape 2</b>: Aller à l'onglet Paramètres.\n",
+      "<b>Étape 3</b>: Donner un nom à votre création puis assigner les paramètres pour la réaliser.\n",
+      "<b>Étape 4</b>: Cliquer sur Générer.\n",
+      "<b>Étape 5</b>: Lire le texte générer dans l'écran de gauche.\n",
+      "<b>Étape 6</b>: Sauvegarder votre texte en cliquant sur le bouton en haut à droite de la fenêtre.\n"
+    ]
+  }
+}

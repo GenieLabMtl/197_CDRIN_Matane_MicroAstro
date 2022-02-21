@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <!-- meta data -->
+        <meta charset="UTF-8">
+        <title>Transfert Style</title>
+        <link rel="icon" href="images/IA_Couleur_ArtsVis1.png" type="image/x-icon" sizes="16x16">
+
+        <meta name="description" content="AI generate image relative to the use request">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="GenieLab">
+
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+        <!-- Style -->
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/loading.css">
+
+        <!-- Script -->
+        <script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- personal script -->
+        <script type="application/javascript" src="javascript/translator.js"></script>
+        <script type="application/javascript" src="javascript/main.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="images/IA_Couleur_ArtsVis1.png" type="image/x-icon" height="34">
+                <img src="images/GenielabLogo-BVert_Copyright.png" type="image/x-icon" height="34" style="margin-left: 10px;">
+            </div>
+            <div>
+                <button class="save" aria-disabled="true" disabled>
+                    <svg width="24" height="29" viewBox="0 0 24 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.6663 10H16.9997V0H6.99968V10H0.333008L11.9997 21.6667L23.6663 10ZM10.333 13.3333V3.33333H13.6663V13.3333H15.6163L11.9997 16.95L8.38301 13.3333H10.333ZM0.333008 25H23.6663V28.3333H0.333008V25Z" fill="white"/>
+                    </svg>
+                    <span class="sr-only">
+                        <span class="download-icone-text">Download the last generate image.</span>
+                        <span class="warning download-icone-text-warning">Note: currently, there is no image to download.</span>
+                    </span>
+                </button>
+                <button id="upload" disabled>
+                    <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 23.8C23.7333 23.8 22.6 24.3 21.7333 25.0833L9.85 18.1667C9.93333 17.7833 10 17.4 10 17C10 16.6 9.93333 16.2167 9.85 15.8333L21.6 8.98334C22.5 9.81668 23.6833 10.3333 25 10.3333C27.7667 10.3333 30 8.10001 30 5.33334C30 2.56668 27.7667 0.333344 25 0.333344C22.2333 0.333344 20 2.56668 20 5.33334C20 5.73334 20.0667 6.11668 20.15 6.50001L8.4 13.35C7.5 12.5167 6.31667 12 5 12C2.23333 12 0 14.2333 0 17C0 19.7667 2.23333 22 5 22C6.31667 22 7.5 21.4833 8.4 20.65L20.2667 27.5833C20.1833 27.9333 20.1333 28.3 20.1333 28.6667C20.1333 31.35 22.3167 33.5333 25 33.5333C27.6833 33.5333 29.8667 31.35 29.8667 28.6667C29.8667 25.9833 27.6833 23.8 25 23.8ZM25 3.66668C25.9167 3.66668 26.6667 4.41668 26.6667 5.33334C26.6667 6.25001 25.9167 7.00001 25 7.00001C24.0833 7.00001 23.3333 6.25001 23.3333 5.33334C23.3333 4.41668 24.0833 3.66668 25 3.66668ZM5 18.6667C4.08333 18.6667 3.33333 17.9167 3.33333 17C3.33333 16.0833 4.08333 15.3333 5 15.3333C5.91667 15.3333 6.66667 16.0833 6.66667 17C6.66667 17.9167 5.91667 18.6667 5 18.6667ZM25 30.3667C24.0833 30.3667 23.3333 29.6167 23.3333 28.7C23.3333 27.7833 24.0833 27.0333 25 27.0333C25.9167 27.0333 26.6667 27.7833 26.6667 28.7C26.6667 29.6167 25.9167 30.3667 25 30.3667Z" fill="white"/>
+                    </svg>
+                    <span class="sr-only">
+                        <span class="share-icone-text">Share the last generate image.</span>
+                        <span class="warning share-icone-text-warning">Note: currently, there is no image to share.</span>
+                    </span>
+                </button>
+            </div>
+        </header>
+        <section>
+            <article center="center col h100">
+                <!-- initial main content -->
+                <div id="step-0" class="center col h100">
+                    <p class="text-before-start">You haven't start yet...</p>
+                    <button id="start-bt" class="searchBt bt text-to-start">GET STARTED</button>
+                </div>
+                <!-- main content after the first search -->
+                <div id="step-2" class="center col h100 hide">
+
+                    <!-- Section of select category -->
+                    <p class="text-your-selection">Your selection</p>
+                    <div id="imgSelectContainer" class="center">
+
+                    </div>
+                    <!-- Section of image generated -->
+                    <div class="container col center">
+
+                        <div id="imgGenerateContainer" class="w100 imgGenerateContainer">
+                        </div>
+                        <button class="bt changeImageButton button-new-selection-image-plural"></button>
+                    </div>
+                </div>
+            </article>
+            <!-- Section of right side -->
+            <aside>
+                <!-- Normal view -->
+                <div id="aside_normal_view" class="aside_mode">
+                    <!-- Section of accordion -->
+                    <div class="accordion">
+                        
+                        <!-- Activity section -->
+                        <h2 id="activity" class="row" aria-atomic="true" >
+                            <span class="arrow-container"  aria-hidden="true">
+                                <svg class="arrow rot90" width="5" height="14" viewBox="0 0 5 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 13.1556L5 6.93334L0 0.711121V13.1556Z" fill="#1C1B1B"/>
+                                </svg>
+                            </span>
+                            <button class="open-accordion" role="button" aria-expanded="true">
+                                <span class="title-activity"></span>
+                                <span class="sub-title-activity"></span>
+                            </button>
+                        </h2>
+                        <div id="activity_section" class="accordionSection" aria-atomic="true">
+                            <ul class="complete-instructions"></ul>
+                            <div id="snip-0" class="snippet">
+                                <h3 class="snippet-generique-h3"></h3>
+                                <ul class="ul-complete-description-generic-param"></ul>
+                            </div>
+                        </div>
+                        <!-- Parameter section -->
+                        <h2 id="parameter" class="row"  aria-atomic="true" >
+                            <span class="arrow-container"  aria-hidden="true">
+                                <svg class="arrow" width="5" height="14" viewBox="0 0 5 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 13.1556L5 6.93334L0 0.711121V13.1556Z" fill="#1C1B1B"/>
+                                </svg>
+                            </span>
+                            <button role="button" aria-expanded="false">
+                                <span class="title-parameter">Parameters</span>
+                                <span class="sub-title-parameters">Ajuste to your taste</span>
+                            </button>
+                        </h2>
+                        <div id="parameter_section" class="accordionSection hide" aria-expanded="false">
+                            <div class="col">
+                                <label for="name_img" class="label-name-creation">Name of your creation</label>
+                                <input id="name_img" class="name_img" name="name_img" type="text" placeholder="Untitled">
+                            </div>
+                            <div class="noMethodSelect accordionSection">
+                                <p class="tip-must-choose-method">
+                                    You must choose one methode...
+                                </p>
+                            </div>
+                        </div>
+                        <!-- snipet section -->
+                        <h2 id="snipet" class="row" aria-atomic="true">
+                            <span class="arrow-container"  aria-hidden="true">
+                                <svg class="arrow" width="5" height="14" viewBox="0 0 5 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 13.1556L5 6.93334L0 0.711121V13.1556Z" fill="#1C1B1B"/>
+                                </svg>
+                            </span>
+                            <button role="button" aria-expanded="false">
+                                <span class="title-snippet">Snippet</span>
+                                <span class="sub-title-snippet">View code behind this magic</span>
+                            </button>
+                        </h2>
+                        <div id="snipet_section" class="accordionSection hide" aria-expanded="false">
+                            <div id="snip-1" class="changeBackground methodLinked snippet">
+                                <h3>
+                                    <span class="sr-only for-prism"></span>
+                                </h3>
+                                <p class="complete-prism-description"></p>
+                            </div>
+                        </div>
+                        <!-- creation information section -->
+                        <h2 id="information" class="row" aria-atomic="true">
+                            <span class="arrow-container"  aria-hidden="true">
+                                <svg class="arrow" width="5" height="14" viewBox="0 0 5 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 13.1556L5 6.93334L0 0.711121V13.1556Z" fill="#1C1B1B"/>
+                                </svg>
+                            </span>
+                            <button role="button" aria-expanded="false">
+                                <span class="title-information">Information</span>
+                                <span class="sub-title-information">Everything about your creation</span>
+                            </button>
+                        </h2>
+                        <div id="information_section" class="accordionSection hide" aria-expanded="false">
+                            <div class="online_creation_active col hide">
+                                <label for="nameCreation" class="label-name-creation">Name of your creation</label>
+                                <input id="nameCreation"  class="name_img"  type="text">
+
+                                <label for="metaDescription" class="label-description-creation">Some description can be nice</label>
+                                <textarea id="metaDescription" name="metaDescription" maxlength="254" rows="10"></textarea>
+
+                                <label for="creatorName" class="label-creator-creation">Creator</label>
+                                <input id="creatorName" type="text" class="" value="{user name}" readonly>
+
+                                <label for="createDate" class="label-date-creation">Created on</label>
+                                <input id="createDate" type="text" value="{Date}" readonly>
+
+                                <hr class="line">
+
+                                <h3 class="sub-title-what-has-been-used">What has been used</h3>
+                                <p id="used_method"></p>
+                                <ul id="used_param">
+
+                                </ul>
+
+                                <hr class="line">
+
+                                <h3 class="sub-title-where-created">Where was this created</h3>
+                                <p id="user_location">Ets worshop - ID:02</p>
+
+                                <hr class="line">
+
+                                <h3 class="sub-title-how-find-cloud">How to find it in the cloud</h3>
+                                <p class="img_id"><span class="text-id-pp">ID:</span><span id="img_id_concrete">8076</span></p>
+                            </div>
+                            <div class="offline_creation">
+                                <p class="tip-must-choose-online-creation"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </section>
+        <!-- Search category section -->
+        <section id="section-select" class="container fixe col justify hide">
+            <!-- header of search category (look like : (1) --- (2) ) -->
+            <div class="head-app Gallery center">
+                <div class="center relative">
+                    <div class="line-50"></div>
+                </div>
+            </div>
+            <!-- Close bouton section -->
+            <div class="top-right">
+                <button id="close-bt" class="close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.6666 2.68334L21.3166 0.333344L11.9999 9.65001L2.68325 0.333344L0.333252 2.68334L9.64992 12L0.333252 21.3167L2.68325 23.6667L11.9999 14.35L21.3166 23.6667L23.6666 21.3167L14.3499 12L23.6666 2.68334Z" fill="white"/>
+                    </svg>
+                    <span class="sr-only text-close">Close button</span>
+                </button>
+            </div>
+            <!-- Select step-1 section: Select the image -->
+            <div id="step-1">
+                <h2 class="title-step-1">Now, choose the images you would like to play</h2>
+                <p class="text-step-1-description">What’s going on here? This will be the base of your creation. Choose up to 3 images</p>
+                <article class="gallery">
+                    <button class="img_toSelect" data-cat-id="-1">
+                        <label for="uploadBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="128" height="128" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill-opacity="0" fill="#75beda"></path><g fill="#736ae4"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM85.94625,58.43297c-1.89722,0.02966 -3.41223,1.58976 -3.38625,3.48703v20.64h-20.64c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h20.64v20.64c-0.01754,1.24059 0.63425,2.39452 1.7058,3.01993c1.07155,0.62541 2.39684,0.62541 3.46839,0c1.07155,-0.62541 1.72335,-1.77935 1.7058,-3.01993v-20.64h20.64c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058h-20.64v-20.64c0.01273,-0.92983 -0.35149,-1.82522 -1.00967,-2.48214c-0.65819,-0.65692 -1.55427,-1.01942 -2.48408,-1.00489z"></path></g></g></svg>
+                        </label>
+                        <input type='file' id='uploadBtn' class='uploadBtn' accept='.png, .jpeg, .jpg' multiple>
+                    </button>
+                </article>
+                <aside class="nextSection hide">
+                    <button id="select-complet" class="bt reverse p5 text-ready-go">I'm ready, go</button>
+                </aside>
+            </div>
+        </section>
+
+    </body>
+</html>
