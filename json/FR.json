@@ -80,10 +80,7 @@
 
     "error-doesnt-have-param-x": "Il n'a pas le param {x}.",
     "error-some-data-miss": "Certaines métadonnées sont manquées.",
-    "error-json-file": "Le fichier json est introuvable.",
-    
-    "button-new-selection-image-plural": "Essayer avec d'autres images ",
-    "button-new-selection-image-single": "Essayer avec une autre image" 
+    "error-json-file": "Le fichier json est introuvable." 
   },
   "staticText": {
     "h1-text": "Ai Picasso par GenieLab.",
@@ -199,7 +196,11 @@
     "warning-change-whitout-save": "Vous êtes sur le point de changer de méthode différente et de générer un nouvel ensemble d'images.",
     "wish-to-do": "Qu'est-ce que tu aimerais faire?",
     "text-save-continue": "Enregistrer et continuer",
-    "text-continue-without-save": "Continuer sans enregistrer"
+    "text-continue-without-save": "Continuer sans enregistrer",
+
+    "button-new-selection-image-plural": "Essayer avec d'autres images ",
+    "button-new-selection-image-single": "Essayer avec une autre image",
+    "img-generate-submit": "Générer"
   },
   "staticAlt": {
     "alt-loading": "Chargement"

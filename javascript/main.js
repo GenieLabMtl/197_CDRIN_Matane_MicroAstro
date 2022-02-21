@@ -23,7 +23,7 @@ function initPage(){
 * @param target     the target element is the title linked with the section
 */
 function openAccordion(target){
-    console.log(target);
+    closeAccordion($(".open-accordion"));
     let parent = target.parent();
     let section = $("#"+ parent.attr("id") + "_section")
 
@@ -58,7 +58,6 @@ function closeAccordion(target){
 function toggleAccordion(){
 
     if($(this).attr("aria-expanded") === "false"){
-        closeAccordion($(".open-accordion"));
         openAccordion($(this));
     } else {
         closeAccordion($(this));
@@ -121,15 +120,22 @@ function addToSelection(event){
 /**
 * Manage the selection of category in the search section.
 */
-function ImageSelection(target){
+function ImageSelection(){
     let cat_id = parseInt($(this)[0].getAttribute("data-cat-id"));
+    
     if ($(this).hasClass("select")) {
-        $(this).removeClass("select relative");
-        $(this).find(".valide_select").remove();
+        ImageUnSelection($(this));
     }
     else if (cat_id != -1 ) {
+        
+        let imgSelect = $(".gallery > .select");
+        if ( imgSelect.length >= 2){
+            ImageUnSelection($(`[order-id="0"]`));
+            imgSelect.length -= 1;
+        }
         // Add the class
         $(this).addClass("select relative");
+        $(this).attr("order-id", imgSelect.length)
 
         // Add the visual
         const checkSvg = '<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">'
@@ -147,6 +153,21 @@ function ImageSelection(target){
     }
 }
 
+function ImageUnSelection(target){
+    target.removeClass("select relative");
+    target.find(".valide_select").remove();
+    target.removeAttr("order-id");
+    updateSelection();
+}
+
+function updateSelection(){
+    let imgSelect = $(".gallery > .select");
+    for (let img of imgSelect){
+        let order_id = parseInt(img.getAttribute("order-id")) - 1;
+        img.setAttribute("order-id", order_id);
+    }
+}
+
 /**
 * Function for the management of the click event
 * on comfirmation of the selected category in the search
@@ -155,6 +176,7 @@ function completSelectCategories(){
     
     // remove previous images
     $("#imgGenerateContainer").empty();
+    $("#imgSelectContainer").empty();
 
     // Disabled the save and upload
     $(".save, #upload").prop("disabled", true);
@@ -171,4 +193,7 @@ function completSelectCategories(){
     $("#step-0").addClass("hide");
     $("#step-2").removeClass("hide");
     closeSelect();
+    openAccordion($("#parameter > button"));
+    $(".noMethodSelect ").addClass("hide");
+    $(".MethodSelect").removeClass("hide");
 }

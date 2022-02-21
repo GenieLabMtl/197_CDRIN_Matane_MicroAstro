@@ -81,10 +81,7 @@
 
     "error-doesnt-have-param-x": "It doesn't have the param {x}.",
     "error-some-data-miss": "Some meta data is missing.",
-    "error-json-file": "The json file is not found.", 
-    
-    "button-new-selection-image-plural": "Try with other images",
-    "button-new-selection-image-single": "Try with another image" 
+    "error-json-file": "The json file is not found."  
   },
   "staticText": {
     "h1-text": "Ai Picasso by GenieLab.",
@@ -200,7 +197,11 @@
     "warning-change-whitout-save": "You are about to change method & generate a new set of images.",
     "wish-to-do": "What would you like to do?",
     "text-save-continue": "Save & continue",
-    "text-continue-without-save": "Continue without saving"
+    "text-continue-without-save": "Continue without saving",
+
+    "button-new-selection-image-plural": "Try with other images",
+    "button-new-selection-image-single": "Try with another image",
+    "img-generate-submit":"Generate"
   },
   "staticAlt": {
     "alt-loading": "Loading"
