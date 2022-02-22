@@ -212,12 +212,10 @@
   },
   "staticLongText": {
     "complete-instructions": [
-      "<b>Étape 1</b>: Choisir un algorithme à la gauche de l'écran.\n",
-      "<b>Étape 2</b>: Aller à l'onglet Paramètres.\n",
+      "<b>Étape 1</b>: Choisir l'image à styliser dans Content.\n",
+      "<b>Étape 2</b>: Sélectionner le style à imiter dans Style.\n",
       "<b>Étape 3</b>: Donner un nom à votre création puis assigner les paramètres pour la réaliser.\n",
-      "<b>Étape 4</b>: Cliquer sur Générer.\n",
-      "<b>Étape 5</b>: Lire le texte générer dans l'écran de gauche.\n",
-      "<b>Étape 6</b>: Sauvegarder votre texte en cliquant sur le bouton en haut à droite de la fenêtre.\n"
+      "<b>Étape 4</b>: Cliquer sur Générer.\n"
     ]
   }
 }

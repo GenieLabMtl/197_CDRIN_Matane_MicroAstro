@@ -213,11 +213,10 @@
   },
   "staticLongText": {
     "complete-instructions": [
-      "<b>Step 1</b>: Go to the Parameters tab.\n",
-      "<b>Step 2</b>: Give a name to your creation and assign the parameters.\n",
-      "<b>Step 3</b>: Click on Generate.\n",
-      "<b>Step 4</b>: Read the generated text on the left of the screen.\n",
-      "<b>Step 5</b>: Save your creation by clicking on the button at the top right of your screen.\n"
+      "<b>Step 1</b>: Choose the image to style in Content.\n",
+      "<b>Step 2</b>: Select the style to imitate in Style.\n",
+      "<b>Step 3</b>: Give a name to your creation and assign the parameters.\n",
+      "<b>Step 4</b>: Click on Generate.\n"
     ]
   }
 }
