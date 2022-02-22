@@ -181,7 +181,6 @@ input:checked + .slider:before {
 .labelledSwitch {
    width: 100%;
    max-width: 98vw;
-   display: flex;
    align-items: center;
 }
 
@@ -190,6 +189,57 @@ input:checked + .slider:before {
    width: 30%;
    min-width: 50px;
    margin-right: 10px;
+}
+
+input[type="range"] {
+   -webkit-appearance: none;
+   margin-right: 15px;
+   width: 200px;
+   height: 7px;
+   background: rgba(255, 255, 255, 0.6);
+   border-radius: 5px;
+   background-color: #ccc;
+   background-size: 70% 100%;
+   background-repeat: no-repeat;
+}
+
+
+/* Input Thumb */
+input[type="range"]::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   height: 20px;
+   width: 20px;
+   border-radius: 50%;
+   background: #736AE4;
+   cursor: ew-resize;
+   box-shadow: 0 0 2px 0 #555;
+   transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-moz-range-thumb {
+   -webkit-appearance: none;
+   height: 20px;
+   width: 20px;
+   border-radius: 50%;
+   background: #736AE4;
+   cursor: ew-resize;
+   box-shadow: 0 0 2px 0 #555;
+   transition: background .3s ease-in-out;
+}
+ 
+input[type="range"]::-ms-thumb {
+   -webkit-appearance: none;
+   height: 20px;
+   width: 20px;
+   border-radius: 50%;
+   background: #736AE4;
+   cursor: ew-resize;
+   box-shadow: 0 0 2px 0 #555;
+   transition: background .3s ease-in-out;
+}
+
+input[type="radio"]:checked ~ .checkmark{
+   background-color: #736AE4;
 }
 
 /* ==========================================================================
@@ -349,11 +399,6 @@ h2 button{
    transform: translateX(-50%);
 }
 
-#step-1{
-   max-width: 100%;
-   padding-bottom: 4.5rem;
-}
-
 .gallery{
    width: 100%;
    max-width: 100%;
@@ -404,4 +449,8 @@ h2 button{
 
 #imgSelectContainer img:hover{
    border: solid 2px #736AE4;
+}
+
+.MethodSelect > div {
+   display: flex;
 }

@@ -58,27 +58,25 @@
             </div>
         </header>
         <section>
-            <article center="center col h100">
+            <article class="row center h100">
                 <!-- initial main content -->
-                <div id="step-0" class="center col h100">
-                    <p class="text-before-start">You haven't start yet...</p>
-                    <button id="start-bt" class="searchBt bt text-to-start">GET STARTED</button>
+                <div id="step-0" class="col center">
+                    <span>Content :</span>
+                    <button id="content_toSelect" class="img_toSelect" data-cat-id="0">
+                        <label for="uploadBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="128" height="128" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill-opacity="0" fill="#75beda"></path><g fill="#736ae4"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM85.94625,58.43297c-1.89722,0.02966 -3.41223,1.58976 -3.38625,3.48703v20.64h-20.64c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h20.64v20.64c-0.01754,1.24059 0.63425,2.39452 1.7058,3.01993c1.07155,0.62541 2.39684,0.62541 3.46839,0c1.07155,-0.62541 1.72335,-1.77935 1.7058,-3.01993v-20.64h20.64c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058h-20.64v-20.64c0.01273,-0.92983 -0.35149,-1.82522 -1.00967,-2.48214c-0.65819,-0.65692 -1.55427,-1.01942 -2.48408,-1.00489z"></path></g></g></svg>
+                        </label>
+                        <input type='file' id='uploadBtn' class='uploadBtn' accept='.png, .jpeg, .jpg'>
+                    </button>
                 </div>
-                <!-- main content after the first search -->
-                <div id="step-2" class="center col h100 hide">
-
-                    <!-- Section of select category -->
-                    <p class="text-your-selection">Your selection</p>
-                    <div id="imgSelectContainer" class="center">
-
-                    </div>
-                    <!-- Section of image generated -->
-                    <div class="container col center">
-
-                        <div id="imgGenerateContainer" class="w100 imgGenerateContainer">
-                        </div>
-                        <button class="bt changeImageButton button-new-selection-image-plural"></button>
-                    </div>
+                <div id="step-1" class="col center">
+                    <span>Style :</span>
+                    <button id="style_toSelect" class="img_toSelect" data-cat-id="1">
+                        <label for="uploadBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="128" height="128" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill-opacity="0" fill="#75beda"></path><g fill="#736ae4"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM85.94625,58.43297c-1.89722,0.02966 -3.41223,1.58976 -3.38625,3.48703v20.64h-20.64c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h20.64v20.64c-0.01754,1.24059 0.63425,2.39452 1.7058,3.01993c1.07155,0.62541 2.39684,0.62541 3.46839,0c1.07155,-0.62541 1.72335,-1.77935 1.7058,-3.01993v-20.64h20.64c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058h-20.64v-20.64c0.01273,-0.92983 -0.35149,-1.82522 -1.00967,-2.48214c-0.65819,-0.65692 -1.55427,-1.01942 -2.48408,-1.00489z"></path></g></g></svg>
+                        </label>
+                        <input type='file' id='uploadBtn' class='uploadBtn' accept='.png, .jpeg, .jpg'>
+                    </button>
                 </div>
             </article>
             <!-- Section of right side -->
@@ -124,29 +122,55 @@
                                 <label for="name_img" class="label-name-creation">Name of your creation</label>
                                 <input id="name_img" class="name_img" name="name_img" type="text" placeholder="Untitled">
                             </div>
-                            <div class="noMethodSelect">
-                                <p class="tip-must-choose-method">
-                                    You must choose one methode...
-                                </p>
-                            </div>
-                            <div class="MethodSelect hide">
+                            <div class="MethodSelect">
                                 <div >
-                                    <div class="labelledSwitch">
-                                        <span class="span-style">Style :</span>
-                                        <label class="switch styleSwitch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                    <div class="labelledSwitch">
-                                        <span class="span-content">Content :</span>
-                                        <label class="switch contentSwitch">
-                                            <input type="checkbox" checked>
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
-                                    <button class="bt gen_submit_bt large-bt img-generate-submit form"></button>
+                                    <label for="gen_area">Résolution :</label>
+                                    <input type="range" id="gen_area" name="gen_area" min="128" max="2000" value="1000">
                                 </div>
+                                <div >
+                                    <label for="gen_iter">Itération :</label>
+                                    <input type="range" id="gen_iter" name="gen_iter" min="100" max="1000" value="500">
+                                </div>
+                                <div >
+                                    <label for="gen_lr">Niveau d'apprentissage :</label>
+                                    <input type="range" id="gen_lr" name="gen_lr" step="0.1" min="0" max="1" value="0.5">
+                                </div>
+                                <div >
+                                    <label for="gen_content_weight">Poids de la perte de contenue :</label>
+                                    <input type="range" id="gen_content_weight" name="gen_content_weight" step="0.1" min="0" max="10" value="1">
+                                </div>
+                                <div >
+                                    <label for="gen_stye_weight">Poids de la perte de style :</label>
+                                    <input type="range" id="gen_style_weight" name="gen_style_weight" min="1" max="500" value="100">
+                                </div>
+                                <div class="multipleChoiseWithLabel">
+                                    <span class="span-content">Echantillonage :</span>
+                                    <div>
+                                        <input type="radio" id="gen_avg_pool_false" name="gen_avg_pool" value="False"
+                                               checked>
+                                        <label for="gen_avg_pool_false">moyen</label>
+                                        <input type="radio" id="gen_avg_pool_true" name="gen_avg_pool" value="True">
+                                        <label for="gen_avg_pool_true">maximum</label>
+                                    </div>
+                                </div>
+                                <div class="labelledSwitch">
+                                    <span class="span-content">Préserver les couleurs :</span>
+                                    <label class="switch contentSwitch">
+                                        <input type="checkbox" id="gen_preserve_color">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="multipleChoiseWithLabel">
+                                    <span class="span-content">Optimizer :</span>
+                                    <div>
+                                        <input type="radio" id="gen_use_adam_false" name="gen_use_adam" value="False"
+                                               checked>
+                                        <label for="gen_use_adam_false">Adam</label>
+                                        <input type="radio" id="gen_use_adam_true" name="gen_use_adam" value="True">
+                                        <label for="gen_use_adam_true">LBFGS</label>
+                                    </div>
+                                </div>
+                                <button class="bt gen_submit_bt large-bt img-generate-submit form"></button>
                             </div>
                         </div>
                         <!-- snipet section -->
