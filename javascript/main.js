@@ -82,6 +82,7 @@ function closeSelect(){
 /****************************** Unclassed function ******************************/
 
 function addToSelection(event){
+    console.log(event)
     let files = event.target.files;
     for (let file of files){
         let type = file.type.replace("image/", "");

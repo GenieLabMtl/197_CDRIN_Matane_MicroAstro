@@ -51,6 +51,12 @@ section{
    height: 100vh;
 }
 
+label, span.span-content{
+   max-width: 200px;
+   width: 60%;
+   min-width: 50px;
+   margin-right: 10px;
+}
 
 /* ==========================================================================
    Header style
@@ -184,11 +190,8 @@ input:checked + .slider:before {
    align-items: center;
 }
 
-.labelledSwitch > span{
-   max-width: 100px;
-   width: 30%;
-   min-width: 50px;
-   margin-right: 10px;
+.large-bt {
+   width: 90%;
 }
 
 input[type="range"] {
@@ -211,7 +214,7 @@ input[type="range"]::-webkit-slider-thumb {
    width: 20px;
    border-radius: 50%;
    background: #736AE4;
-   cursor: ew-resize;
+   cursor: pointer;
    box-shadow: 0 0 2px 0 #555;
    transition: background .3s ease-in-out;
 }
@@ -222,7 +225,7 @@ input[type="range"]::-moz-range-thumb {
    width: 20px;
    border-radius: 50%;
    background: #736AE4;
-   cursor: ew-resize;
+   cursor: pointer;
    box-shadow: 0 0 2px 0 #555;
    transition: background .3s ease-in-out;
 }
@@ -233,14 +236,14 @@ input[type="range"]::-ms-thumb {
    width: 20px;
    border-radius: 50%;
    background: #736AE4;
-   cursor: ew-resize;
+   cursor: pointer;
    box-shadow: 0 0 2px 0 #555;
    transition: background .3s ease-in-out;
 }
 
-input[type="radio"]:checked ~ .checkmark{
-   background-color: #736AE4;
-}
+input[type="radio"]{
+   accent-color: #736AE4;
+}  
 
 /* ==========================================================================
    structure class style
@@ -453,4 +456,6 @@ h2 button{
 
 .MethodSelect > div {
    display: flex;
+   align-items: center;
+   margin: 2px 0px;
 }
