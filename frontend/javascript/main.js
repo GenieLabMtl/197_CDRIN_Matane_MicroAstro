@@ -1,4 +1,5 @@
 const translator = new Translator(0);
+const backend_url = "http://localhost:8080";
 
 $(document).ready(initPage);
 
@@ -11,6 +12,7 @@ function initPage(){
     $(".accordion button, .accordion .arrow-container").on("click", toggleAccordion);
     $(".searchBt, .changeImageButton").on("click", activeSelect);
     $('.uploadBtn').on("change", addToSelection);
+    $('.img-generate-submit').on("click", sendParam);
 }
 
 /****************************** Accordion section code ******************************/
@@ -82,7 +84,6 @@ function closeSelect(){
 /****************************** Unclassed function ******************************/
 
 function addToSelection(event){
-    console.log(event)
     let files = event.target.files;
     for (let file of files){
         let type = file.type.replace("image/", "");
@@ -106,11 +107,57 @@ function addToSelection(event){
                 button += '></button>';
 
                 let category = event.target.parentNode.getAttribute("data-cat-id");
-
+                if ($("#step-" + category).children().length !== 2){
+                    $("#step-" + category).find(".img_toSelect")[1].remove();
+                }
                 // Add the button for the group category
                 $("#step-" + category).append(button);
+
+                category = Math.abs(category - 1);
+
+                if ($("#step-" + category).children().length !== 2 ){
+                    openAccordion($("#parameter > button"));
+                    $(".img-generate-submit").prop("disabled", false);
+                }
+
+                const data = {
+                    src: img.src,
+                    format: img.src.substring("data:image/".length, img.src.indexOf(";base64"))
+                }
+
+                sendApiRequest("POST", event.target.parentNode.id.split("_toSelect")[0], data);
             }
         })
         reader.readAsDataURL(file);
     }
+}
+
+/**
+ * Send API request
+ * @param operation     GET/POST/PUT/DELETE
+ * @param url           The url where to send the API request
+ * @param data          optionnal data
+ */
+function sendApiRequest(operation, url, data) {
+    let request = new XMLHttpRequest();
+    request.open(operation, backend_url + "/" + url);
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    request.setRequestHeader('Access-Control-Allow-Origin', '*')
+    request.send(JSON.stringify(data));
+    return request;
+}
+
+function sendParam(){
+    let param_id = ".MethodSelect [name=gen_";
+    const param = {
+        area: $(param_id + "area]").val(),
+        iter: $(param_id + "iter]").val(),
+        lr: $(param_id + "lr]").val(),
+        content_weight: $(param_id + "content_weight]").val(),
+        style_weight: $(param_id + "style_weight]").val(),
+        avg_pool: $(param_id + "avg_pool]").val(),
+        preserve_color: $(param_id + "preserve_color]").val(),
+        use_adam: $(param_id + "use_adam]").val(),
+    };
+    sendApiRequest("POST", "parameter", param);
 }

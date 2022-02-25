@@ -158,7 +158,7 @@ function Translator(index){
     */
     function requestTranslate(lang, isFirstCall, isPrototype3){
         // Set the url path for the json file
-        var url = "../json/" + lang + ".json";
+        var url = "../frontend/json/" + lang + ".json";
 
         // Send request
         if(isValidLang(lang)){
