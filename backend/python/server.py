@@ -1,56 +1,50 @@
 #!/usr/bin/env python3
-
-from http.server import BaseHTTPRequestHandler, HTTPServer
-import time
-import json
+from flask import Flask, jsonify, request
+from flask_cors import CORS, cross_origin
 import base64
 import os
+import requests
 
-url = "localhost"
-port = 8080
+app = Flask(__name__)
+CORS(app, resources=r'/api/*')
 
-class Server(BaseHTTPRequestHandler):
+style ='../images/style.png'
+content ='../images/content.png'
 
-    def end_headers(self):
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Access-Control-Allow-Methods', '*')
-        self.send_header("Access-Control-Allow-Headers", '*')
-        self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate')
-        return super(Server, self).end_headers()
+def save_image(name, src, format):
+    file = '../images/' + name + '.'+ format
+    with open(file, 'wb') as fh:
+        fh.write(base64.b64decode(src))
 
-    def do_OPTIONS(self):
-        self.send_response(200)
-        self.end_headers()
-
-    def do_POST(self):
-        path = self.path[1:]
-        length = int(self.headers.get('content-length'))
-        data = self.rfile.read(length)
-        decode_data = json.loads(data)
-        if path == 'content' or path == 'style':
-            name = '../images/' + path + '.'+ decode_data['format']
-            setattr(self, path, name)
-            with open(name, 'wb') as fh:
-                fh.write(base64.b64decode(decode_data['src']))
-        if path == 'parameter' :
-            command = 'style-transfer '+ self.content + ' ' + self.style
-            for param in decode_data:
-                command += ' --'+param + ' ' + decode_data[param]
-            print(command)
-            os.system('style-transfer '+ self.content + ' ' + self.style + ' --area');
-        self.send_response(200)
-        self.end_headers()
+def start_execution(decode_data, response):
+    command = 'style-transfer ' + content + ' ' + style
+    for param in decode_data:
+        command += ' --'+param + ' ' + decode_data[param]
+    os.system(command)
+    with open('../images/artwork.png', "rb") as fh:
+        artwork = base64.b64encode(fh.read())
+        data = {'src': artwork}
+        requests.post(response +'/generation', json=data)
 
 
 
-if __name__ == "__main__":        
-    server = HTTPServer((url, port), Server)
-    print("Server started http://%s:%s" % (url, port))
 
-    try:
-        server.serve_forever()
-    except KeyboardInterrupt:
-        pass
+@app.route('/content', methods=["POST"])
+@cross_origin()
+def post_content():
+    save_image('content', request.get_json()['src'], request.get_json()['format'])
+    return '', 200
 
-    server.server_close()
-    print("Server stopped.")
+@app.route('/style', methods=["POST"])
+@cross_origin()
+def post_style():
+    save_image('style', request.get_json()['src'], request.get_json()['format'])
+    return '', 200
+
+@app.route('/parameter', methods=["POST"])
+@cross_origin()
+def post_parameter():
+    start_execution(request.get_json(), request.environ['HTTP_ORIGIN'])
+    return '', 200
+
+app.run(host='localhost', port=8080, debug=True)

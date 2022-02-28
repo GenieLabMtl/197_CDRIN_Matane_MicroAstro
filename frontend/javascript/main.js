@@ -13,6 +13,7 @@ function initPage(){
     $(".searchBt, .changeImageButton").on("click", activeSelect);
     $('.uploadBtn').on("change", addToSelection);
     $('.img-generate-submit').on("click", sendParam);
+    $('#cancel_generation').on("click", cancelGeneration)
 }
 
 /****************************** Accordion section code ******************************/
@@ -126,7 +127,6 @@ function addToSelection(event){
                     src: info[1],
                     format: info[0].substring("data:image/".length)
                 }
-                console.log(data)
                 sendApiRequest("POST", event.target.parentNode.id.split("_toSelect")[0], data);
             }
         })
@@ -162,5 +162,18 @@ function sendParam(){
         use_adam: $(param_id + "use_adam]").val(),
     };
     sendApiRequest("POST", "parameter", param);
-    $('.bg_loading').removeClass('hide');
+    $(".bg_loading").removeClass("hide");
+}
+
+function receiveMessage(event){
+    if (event.origin !== backend_url && event.origin !== WINDOW_LOCATION){
+        return;
+    } else if (event.data.indexOf("") > -1){
+        $(".loading-Elem-param").addClass("hide");
+        console.log(event.data);
+    }
+}
+
+function cancelGeneration(){
+    sendApiRequest("POST", "end");
 }
