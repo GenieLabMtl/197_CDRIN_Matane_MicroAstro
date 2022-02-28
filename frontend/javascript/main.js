@@ -120,11 +120,13 @@ function addToSelection(event){
                     $(".img-generate-submit").prop("disabled", false);
                 }
 
-                const data = {
-                    src: img.src,
-                    format: img.src.substring("data:image/".length, img.src.indexOf(";base64"))
-                }
+                let info = img.src.split(";base64");
 
+                const data = {
+                    src: info[1],
+                    format: info[0].substring("data:image/".length)
+                }
+                console.log(data)
                 sendApiRequest("POST", event.target.parentNode.id.split("_toSelect")[0], data);
             }
         })
@@ -160,4 +162,5 @@ function sendParam(){
         use_adam: $(param_id + "use_adam]").val(),
     };
     sendApiRequest("POST", "parameter", param);
+    $('.bg_loading').removeClass('hide');
 }

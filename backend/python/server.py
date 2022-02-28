@@ -28,17 +28,16 @@ class Server(BaseHTTPRequestHandler):
         data = self.rfile.read(length)
         decode_data = json.loads(data)
         if path == 'content' or path == 'style':
-            name = path + '.'+ decode_data['format']
+            name = '../images/' + path + '.'+ decode_data['format']
             setattr(self, path, name)
-            print(getattr(self, path))
-            with open(name, 'x') as fh:
-                fh.write(base64.decodebytes(decode_data['src']))
+            with open(name, 'wb') as fh:
+                fh.write(base64.b64decode(decode_data['src']))
         if path == 'parameter' :
-            command = 'style-transfer '#+ self.content + ' ' + self.style
+            command = 'style-transfer '+ self.content + ' ' + self.style
             for param in decode_data:
                 command += ' --'+param + ' ' + decode_data[param]
             print(command)
-            #os.system('style-transfer '+ self.content + ' ' + self.style + ' --area');
+            os.system('style-transfer '+ self.content + ' ' + self.style + ' --area');
         self.send_response(200)
         self.end_headers()
 
