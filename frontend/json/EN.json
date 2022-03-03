@@ -182,7 +182,18 @@
     "label-is-gif": "It's a gif",
     "label-duration":"Total duration (in seconds)",
 
-    "label-resolution": "resolution",
+    "label-resolution": "Resolution :",
+    "label-iteration": "Iterations :",
+    "label-lr": "Learning rate :",
+    "label-content-weight": "Content loss :",
+    "label-style-weight": "Style loss :",
+    "label-avg-pool": "Sampling :",
+    "label-avg-pool-false": "Average",
+    "label-avg-pool-true": "Maximum",
+    "label-preserve-color": "Preserve color :",
+    "label-use-adam": "Optimization :",
+    "label-use-adam-false": "Adam",
+    "label-use-adam-true": "LBFGS",
 
     "label-zoom-slider": "Zoom :",
 
@@ -201,7 +212,10 @@
 
     "button-new-selection-image-plural": "Try with other images",
     "button-new-selection-image-single": "Try with another image",
-    "img-generate-submit":"Generate"
+    "img-generate-submit":"Generate",
+
+    "content_button" : "Content :",
+    "style_button"  : "Style :"
   },
   "staticAlt": {
     "alt-loading": "Loading"

@@ -13,7 +13,10 @@ function initPage(){
     $(".searchBt, .changeImageButton").on("click", activeSelect);
     $('.uploadBtn').on("change", addToSelection);
     $('.img-generate-submit').on("click", sendParam);
-    $('#cancel_generation').on("click", cancelGeneration)
+    $('#gen_area, #gen_iter, #gen_lr, #gen_content_weight, #gen_style_weight').on("input", changeInputValue)
+    $('#cancel_generation').on("click", cancelGeneration);
+
+    initInputOutput();
 }
 
 /****************************** Accordion section code ******************************/
@@ -82,9 +85,22 @@ function closeSelect(){
     $("#section-select").addClass("hide");
 }
 
+function changeInputValue(event){
+    $("output[for="+event.target.id+"]").val(event.target.valueAsNumber);
+}
+
+function initInputOutput(){
+    for (let elem of $("input").siblings("output")){
+        $(elem).val($("#"+elem.getAttribute("for")).val());
+    }
+}
+
 /****************************** Unclassed function ******************************/
 
 function addToSelection(event){
+    event.preventDefault();
+    event.stopPropagation();
+
     let files = event.target.files;
     for (let file of files){
         let type = file.type.replace("image/", "");
@@ -158,22 +174,24 @@ function sendParam(){
         content_weight: $(param_id + "content_weight]").val(),
         style_weight: $(param_id + "style_weight]").val(),
         avg_pool: $(param_id + "avg_pool]").val(),
-        preserve_color: $(param_id + "preserve_color]").val(),
+        preserve_color: $(param_id + "preserve_color]").is(':checked')?'none':'style',
         use_adam: $(param_id + "use_adam]").val(),
     };
-    sendApiRequest("POST", "parameter", param);
-    $(".bg_loading").removeClass("hide");
-}
-
-function receiveMessage(event){
-    if (event.origin !== backend_url && event.origin !== WINDOW_LOCATION){
-        return;
-    } else if (event.data.indexOf("") > -1){
-        $(".loading-Elem-param").addClass("hide");
-        console.log(event.data);
+    let request = sendApiRequest("POST", "parameter", param);
+    request.onload = () => {
+        if (request.status == 200){
+            getResult(JSON.parse(request.response));
+            $(".bg_loading").addClass("hide");
+        }
     }
+    $(".bg_loading").removeClass("hide");
 }
 
 function cancelGeneration(){
     sendApiRequest("POST", "end");
+}
+
+function getResult(src){
+    $("#imgGenerateContainer").empty();
+    $("#imgGenerateContainer").append("<img id='generate_image' src='data:image/png;base64,"+ src.src +"'>");
 }

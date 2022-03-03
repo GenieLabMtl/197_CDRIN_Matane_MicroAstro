@@ -128,7 +128,6 @@ function Translator(index){
 
         // Translate
         requestTranslate(lang, false);
-        requestTranslateSnippet(lang);
     }
 
     /**
@@ -177,21 +176,6 @@ function Translator(index){
             }, function(){
                 failJsonLoad();
             });
-        }
-    }
-
-    /**
-    * Request the snippet json file and use his data.
-    * @param lang           string of the language to validate
-    */
-    function requestTranslateSnippet(lang){
-        if(isValidLang(lang)){
-            // Set the url path for the json file
-            var url;
-            url = "../json/snippet-"+lang+".json";
-
-            // Send request
-            sendAjaxRequest(url, changeSnippetText, failJsonLoad)
         }
     }
 
@@ -460,28 +444,6 @@ function Translator(index){
         }
 
         return oldContent;
-    }
-
-    /**
-    * Change all methode description (snippet)
-    *@param data    the data of the select language json file
-    */
-    function changeSnippetText(data){
-        // Change all of snippet text
-        var textContent;
-        for (let classes in data){
-
-            // Get the text content of the methode
-            textContent = "";
-
-            // Each element of the array is one line of content
-            for (let text in data[classes]){
-                textContent += text + "\n";
-            }
-
-            // Set the content of the snippet
-            $(".snippet."+classes + " pre").html('<code class="lang-python">'+textContent+'</code>');
-        }
     }
 
     /**

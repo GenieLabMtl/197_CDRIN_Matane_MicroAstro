@@ -67,6 +67,13 @@ label, span.span-content{
    padding: 5px;
 }
 
+.global {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   width: 120px;
+}
+
 header button{
    background-color: rgba(0,0,0,0);
    border: none;
@@ -382,6 +389,43 @@ h2 button{
    padding:0px;
    margin-left: 30px;
 }
+
+/* ==========================================================================
+   image generate section style 
+   ========================================================================== */
+
+   .imgGenerateContainer{
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 55vh;
+      padding: 25px;
+      width: 100%;
+  }
+  
+  .imgGenerateContainer img{
+      border: solid 2px rgba(0,0,0,0);
+      margin: 2%;
+      width: 20%;
+  }
+  
+  .imgGenerateContainer img:hover{
+      border: solid 2px black;
+  }
+  
+  .imgGenerateContainer img:first-child{
+      width: 100%;
+  }
+  
+  #imgSelectContainer img{
+      border: solid 2px rgba(0,0,0,0);
+      margin:5px;
+      width: 64px;
+  }
+  
+  #imgSelectContainer img:hover{
+      border: solid 2px #736AE4;
+  }
 
 /* ==========================================================================
    Other section style (actually no-classed)

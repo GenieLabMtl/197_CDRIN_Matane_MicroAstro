@@ -36,47 +36,47 @@
                 <img src="images/IA_Couleur_ArtsVis1.png" type="image/x-icon" height="34">
                 <img src="images/GenielabLogo-BVert_Copyright.png" type="image/x-icon" height="34" style="margin-left: 10px;">
             </div>
-            <div>
+            <div class="global">
+                <select name="chooseLang" id="chooseLang"></select>
                 <button class="save" aria-disabled="true" disabled>
                     <svg width="24" height="29" viewBox="0 0 24 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M23.6663 10H16.9997V0H6.99968V10H0.333008L11.9997 21.6667L23.6663 10ZM10.333 13.3333V3.33333H13.6663V13.3333H15.6163L11.9997 16.95L8.38301 13.3333H10.333ZM0.333008 25H23.6663V28.3333H0.333008V25Z" fill="white"/>
                     </svg>
                     <span class="sr-only">
-                        <span class="download-icone-text">Download the last generate image.</span>
-                        <span class="warning download-icone-text-warning">Note: currently, there is no image to download.</span>
-                    </span>
-                </button>
-                <button id="upload" disabled>
-                    <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M25 23.8C23.7333 23.8 22.6 24.3 21.7333 25.0833L9.85 18.1667C9.93333 17.7833 10 17.4 10 17C10 16.6 9.93333 16.2167 9.85 15.8333L21.6 8.98334C22.5 9.81668 23.6833 10.3333 25 10.3333C27.7667 10.3333 30 8.10001 30 5.33334C30 2.56668 27.7667 0.333344 25 0.333344C22.2333 0.333344 20 2.56668 20 5.33334C20 5.73334 20.0667 6.11668 20.15 6.50001L8.4 13.35C7.5 12.5167 6.31667 12 5 12C2.23333 12 0 14.2333 0 17C0 19.7667 2.23333 22 5 22C6.31667 22 7.5 21.4833 8.4 20.65L20.2667 27.5833C20.1833 27.9333 20.1333 28.3 20.1333 28.6667C20.1333 31.35 22.3167 33.5333 25 33.5333C27.6833 33.5333 29.8667 31.35 29.8667 28.6667C29.8667 25.9833 27.6833 23.8 25 23.8ZM25 3.66668C25.9167 3.66668 26.6667 4.41668 26.6667 5.33334C26.6667 6.25001 25.9167 7.00001 25 7.00001C24.0833 7.00001 23.3333 6.25001 23.3333 5.33334C23.3333 4.41668 24.0833 3.66668 25 3.66668ZM5 18.6667C4.08333 18.6667 3.33333 17.9167 3.33333 17C3.33333 16.0833 4.08333 15.3333 5 15.3333C5.91667 15.3333 6.66667 16.0833 6.66667 17C6.66667 17.9167 5.91667 18.6667 5 18.6667ZM25 30.3667C24.0833 30.3667 23.3333 29.6167 23.3333 28.7C23.3333 27.7833 24.0833 27.0333 25 27.0333C25.9167 27.0333 26.6667 27.7833 26.6667 28.7C26.6667 29.6167 25.9167 30.3667 25 30.3667Z" fill="white"/>
-                    </svg>
-                    <span class="sr-only">
-                        <span class="share-icone-text">Share the last generate image.</span>
-                        <span class="warning share-icone-text-warning">Note: currently, there is no image to share.</span>
+                        <span class="download-icone-text"></span>
+                        <span class="warning download-icone-text-warning"></span>
                     </span>
                 </button>
             </div>
         </header>
         <section>
-            <article class="row center h100">
+            <article class="col center h100">
                 <!-- initial main content -->
-                <div id="step-0" class="col center">
-                    <span>Content :</span>
-                    <button id="content_toSelect" class="img_toSelect resize" data-cat-id="0">
-                        <label for="uploadBtn0">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="128" height="128" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill-opacity="0" fill="#75beda"></path><g fill="#736ae4"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM85.94625,58.43297c-1.89722,0.02966 -3.41223,1.58976 -3.38625,3.48703v20.64h-20.64c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h20.64v20.64c-0.01754,1.24059 0.63425,2.39452 1.7058,3.01993c1.07155,0.62541 2.39684,0.62541 3.46839,0c1.07155,-0.62541 1.72335,-1.77935 1.7058,-3.01993v-20.64h20.64c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058h-20.64v-20.64c0.01273,-0.92983 -0.35149,-1.82522 -1.00967,-2.48214c-0.65819,-0.65692 -1.55427,-1.01942 -2.48408,-1.00489z"></path></g></g></svg>
-                        </label>
-                        <input type='file' id='uploadBtn0' class='uploadBtn' accept='.png, .jpeg, .jpg'>
-                    </button>
+                <div class="row">
+                    <div id="step-0" class="col center">
+                        <span class="content_button"></span>
+                        <button id="content_toSelect" class="img_toSelect resize" type="button" data-cat-id="0">
+                            <label for="uploadBtn0">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="128" height="128" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill-opacity="0" fill="#75beda"></path><g fill="#736ae4"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM85.94625,58.43297c-1.89722,0.02966 -3.41223,1.58976 -3.38625,3.48703v20.64h-20.64c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h20.64v20.64c-0.01754,1.24059 0.63425,2.39452 1.7058,3.01993c1.07155,0.62541 2.39684,0.62541 3.46839,0c1.07155,-0.62541 1.72335,-1.77935 1.7058,-3.01993v-20.64h20.64c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058h-20.64v-20.64c0.01273,-0.92983 -0.35149,-1.82522 -1.00967,-2.48214c-0.65819,-0.65692 -1.55427,-1.01942 -2.48408,-1.00489z"></path></g></g></svg>
+                            </label>
+                            <input type='file' id='uploadBtn0' class='uploadBtn' accept='.png, .jpeg, .jpg'>
+                        </button>
+                    </div>
+                    <div id="step-1" class="col center">
+                        <span class="style_button"></span>
+                        <button id="style_toSelect" class="img_toSelect resize" type="button" data-cat-id="1">
+                            <label for="uploadBtn1">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="128" height="128" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill-opacity="0" fill="#75beda"></path><g fill="#736ae4"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM85.94625,58.43297c-1.89722,0.02966 -3.41223,1.58976 -3.38625,3.48703v20.64h-20.64c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h20.64v20.64c-0.01754,1.24059 0.63425,2.39452 1.7058,3.01993c1.07155,0.62541 2.39684,0.62541 3.46839,0c1.07155,-0.62541 1.72335,-1.77935 1.7058,-3.01993v-20.64h20.64c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058h-20.64v-20.64c0.01273,-0.92983 -0.35149,-1.82522 -1.00967,-2.48214c-0.65819,-0.65692 -1.55427,-1.01942 -2.48408,-1.00489z"></path></g></g></svg>
+                            </label>
+                            <input type='file' id='uploadBtn1' class='uploadBtn' accept='.png, .jpeg, .jpg'>
+                        </button>
+                    </div>
                 </div>
-                <div id="step-1" class="col center">
-                    <span>Style :</span>
-                    <button id="style_toSelect" class="img_toSelect resize" data-cat-id="1">
-                        <label for="uploadBtn1">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="128" height="128" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill-opacity="0" fill="#75beda"></path><g fill="#736ae4"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM85.94625,58.43297c-1.89722,0.02966 -3.41223,1.58976 -3.38625,3.48703v20.64h-20.64c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h20.64v20.64c-0.01754,1.24059 0.63425,2.39452 1.7058,3.01993c1.07155,0.62541 2.39684,0.62541 3.46839,0c1.07155,-0.62541 1.72335,-1.77935 1.7058,-3.01993v-20.64h20.64c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058h-20.64v-20.64c0.01273,-0.92983 -0.35149,-1.82522 -1.00967,-2.48214c-0.65819,-0.65692 -1.55427,-1.01942 -2.48408,-1.00489z"></path></g></g></svg>
-                        </label>
-                        <input type='file' id='uploadBtn1' class='uploadBtn' accept='.png, .jpeg, .jpg'>
-                    </button>
+                <!-- Section of image generated -->
+                <div class="col">
+
+                    <div id="imgGenerateContainer" class="w100 imgGenerateContainer">
+                    </div>
                 </div>
             </article>
             <!-- Section of right side -->
@@ -113,61 +113,66 @@
                                 </svg>
                             </span>
                             <button role="button" aria-expanded="false">
-                                <span class="title-parameter">Parameters</span>
-                                <span class="sub-title-parameters">Ajuste to your taste</span>
+                                <span class="title-parameter"></span>
+                                <span class="sub-title-parameters"></span>
                             </button>
                         </h2>
                         <div id="parameter_section" class="accordionSection hide" aria-expanded="false">
                             <div class="col">
-                                <label for="name_img" class="label-name-creation">Name of your creation</label>
+                                <label for="name_img" class="label-name-creation"></label>
                                 <input id="name_img" class="name_img" name="name_img" type="text" placeholder="Untitled">
                             </div>
                             <div class="MethodSelect">
                                 <div>
-                                    <label for="gen_area">Résolution :</label>
+                                    <label for="gen_area" class="label-resolution"></label>
                                     <input type="range" id="gen_area" name="gen_area" min="128" max="2000" value="1000">
+                                    <output for="gen_area"></output>
                                 </div>
                                 <div >
-                                    <label for="gen_iter">Itération :</label>
+                                    <label for="gen_iter" class="label-iteration"></label>
                                     <input type="range" id="gen_iter" name="gen_iter" min="100" max="1000" value="500">
+                                    <output for="gen_iter"></output>
                                 </div>
                                 <div >
-                                    <label for="gen_lr">Pas d'apprentissage :</label>
+                                    <label for="gen_lr" class="label-lr"></label>
                                     <input type="range" id="gen_lr" name="gen_lr" step="0.1" min="0" max="1" value="0.5">
+                                    <output for="gen_lr"></output>
                                 </div>
                                 <div >
-                                    <label for="gen_content_weight">Réduction de contenue :</label>
+                                    <label for="gen_content_weight" class="label-content-weight"></label>
                                     <input type="range" id="gen_content_weight" name="gen_content_weight" step="0.1" min="0" max="10" value="1">
+                                    <output for="gen_content_weight"></output>
                                 </div>
                                 <div >
-                                    <label for="gen_stye_weight">Réduction de style :</label>
+                                    <label for="gen_stye_weight" class="label-style-weight"></label>
                                     <input type="range" id="gen_style_weight" name="gen_style_weight" min="1" max="500" value="100">
+                                    <output for="gen_style_weight"></output>
                                 </div>
                                 <div class="multipleChoiseWithLabel">
-                                    <span class="span-content">Echantillonage :</span>
+                                    <span class="span-content label-avg-pool"> :</span>
                                     <div>
                                         <input type="radio" id="gen_avg_pool_false" name="gen_avg_pool" value="False"
                                                checked>
-                                        <label for="gen_avg_pool_false">moyen</label>
+                                        <label for="gen_avg_pool_false" class="label-avg-pool-false"></label>
                                         <input type="radio" id="gen_avg_pool_true" name="gen_avg_pool" value="True">
-                                        <label for="gen_avg_pool_true">maximum</label>
+                                        <label for="gen_avg_pool_true" class="label-avg-pool-true"></label>
                                     </div>
                                 </div>
                                 <div class="labelledSwitch">
-                                    <span class="span-content">Préserver les couleurs :</span>
+                                    <span class="span-content label-preserve-color"></span>
                                     <label class="switch contentSwitch">
                                         <input type="checkbox" id="gen_preserve_color" name="gen_preserve_color">
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
                                 <div class="multipleChoiseWithLabel">
-                                    <span class="span-content">Optimisation :</span>
+                                    <span class="span-content label-use-adam"></span>
                                     <div>
                                         <input type="radio" id="gen_use_adam_false" name="gen_use_adam" value="False"
                                                checked>
-                                        <label for="gen_use_adam_false">Adam</label>
+                                        <label for="gen_use_adam_false" class="label-use-adam-false"></label>
                                         <input type="radio" id="gen_use_adam_true" name="gen_use_adam" value="True">
-                                        <label for="gen_use_adam_true">LBFGS</label>
+                                        <label for="gen_use_adam_true" class="label-use-adam-true"></label>
                                     </div>
                                 </div>
                                 <button class="bt gen_submit_bt large-bt img-generate-submit form" disabled></button>
