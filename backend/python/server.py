@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
-from threading import Thread
 import base64
 import os
 import requests
