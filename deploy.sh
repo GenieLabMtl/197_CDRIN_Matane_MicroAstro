@@ -1,12 +1,7 @@
 #!/bin/sh
 
-cd backend/python
-
-MODEL="/prism"
-
-if [ ! -d "$MODEL"]; then
-    pip install -q git+https://github.com/moritztng/prism.git
-
-pip install Flask
-pip install -U flask-cors
-pip install requests
+if [[ $OSTYPE == 'darwin'* ]]; then
+    pip3 install -r documentation/requirements/python.txt
+else 
+    pip install -r documentation/requirements/python.txt
+fi

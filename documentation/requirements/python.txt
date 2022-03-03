@@ -1,0 +1,4 @@
+git+https://github.com/moritztng/prism.git --install-option='-q'
+Flask
+flask-cors --install-option='-U'
+requests
