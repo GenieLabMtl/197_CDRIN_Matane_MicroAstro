@@ -33,8 +33,8 @@
     <body>
         <header>
             <div class="logo">
-                <img src="images/IA_Couleur_ArtsVis1.png" type="image/x-icon" height="34">
-                <img src="images/GenielabLogo-BVert_Copyright.png" type="image/x-icon" height="34" style="margin-left: 10px;">
+                <img src="images/IA_Couleur_ArtsVis1.png" type="image/x-icon" alt="Logo" height="34">
+                <img src="images/GenielabLogo-BVert_Copyright.png" type="image/x-icon" alt="GénieLab" height="34" style="margin-left: 10px;">
             </div>
             <div class="global">
                 <select name="chooseLang" id="chooseLang"></select>
@@ -50,12 +50,12 @@
             </div>
         </header>
         <section>
-            <article class="col center h100">
+            <article class="col justify center h100">
                 <!-- initial main content -->
                 <div class="row">
                     <div id="step-0" class="col center">
-                        <span class="content_button"></span>
-                        <button id="content_toSelect" class="img_toSelect resize" type="button" data-cat-id="0">
+                        <span class="content-button"></span>
+                        <button id="content_toSelect" class="img_toSelect p0 resize" type="button" data-cat-id="0">
                             <label for="uploadBtn0">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="128" height="128" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill-opacity="0" fill="#75beda"></path><g fill="#736ae4"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM85.94625,58.43297c-1.89722,0.02966 -3.41223,1.58976 -3.38625,3.48703v20.64h-20.64c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h20.64v20.64c-0.01754,1.24059 0.63425,2.39452 1.7058,3.01993c1.07155,0.62541 2.39684,0.62541 3.46839,0c1.07155,-0.62541 1.72335,-1.77935 1.7058,-3.01993v-20.64h20.64c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058h-20.64v-20.64c0.01273,-0.92983 -0.35149,-1.82522 -1.00967,-2.48214c-0.65819,-0.65692 -1.55427,-1.01942 -2.48408,-1.00489z"></path></g></g></svg>
                             </label>
@@ -63,8 +63,8 @@
                         </button>
                     </div>
                     <div id="step-1" class="col center">
-                        <span class="style_button"></span>
-                        <button id="style_toSelect" class="img_toSelect resize" type="button" data-cat-id="1">
+                        <span class="style-button"></span>
+                        <button id="style_toSelect" class="img_toSelect p0 resize" type="button" data-cat-id="1">
                             <label for="uploadBtn1">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="128" height="128" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill-opacity="0" fill="#75beda"></path><g fill="#736ae4"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM85.94625,58.43297c-1.89722,0.02966 -3.41223,1.58976 -3.38625,3.48703v20.64h-20.64c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h20.64v20.64c-0.01754,1.24059 0.63425,2.39452 1.7058,3.01993c1.07155,0.62541 2.39684,0.62541 3.46839,0c1.07155,-0.62541 1.72335,-1.77935 1.7058,-3.01993v-20.64h20.64c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058h-20.64v-20.64c0.01273,-0.92983 -0.35149,-1.82522 -1.00967,-2.48214c-0.65819,-0.65692 -1.55427,-1.01942 -2.48408,-1.00489z"></path></g></g></svg>
                             </label>
@@ -82,7 +82,7 @@
             <!-- Section of right side -->
             <aside>
                 <!-- Normal view -->
-                <div id="aside_normal_view" class="aside_mode">
+                <div id="aside_normal_view" class="aside_mode h100">
                     <!-- Section of accordion -->
                     <div class="accordion">
                         
@@ -93,12 +93,12 @@
                                     <path d="M0 13.1556L5 6.93334L0 0.711121V13.1556Z" fill="#1C1B1B"/>
                                 </svg>
                             </span>
-                            <button class="open-accordion" role="button" aria-expanded="true">
+                            <button class="open-accordion w100" role="button" aria-expanded="true">
                                 <span class="title-activity"></span>
                                 <span class="sub-title-activity"></span>
                             </button>
                         </h2>
-                        <div id="activity_section" class="accordionSection" aria-atomic="true">
+                        <div id="activity_section" class="accordionSection p0" aria-atomic="true">
                             <ul class="complete-instructions"></ul>
                             <div id="snip-0" class="snippet">
                                 <h3 class="snippet-generique-h3"></h3>
@@ -112,43 +112,43 @@
                                     <path d="M0 13.1556L5 6.93334L0 0.711121V13.1556Z" fill="#1C1B1B"/>
                                 </svg>
                             </span>
-                            <button role="button" aria-expanded="false">
+                            <button class="w100" role="button" aria-expanded="false">
                                 <span class="title-parameter"></span>
                                 <span class="sub-title-parameters"></span>
                             </button>
                         </h2>
-                        <div id="parameter_section" class="accordionSection hide" aria-expanded="false">
+                        <div id="parameter_section" class="accordionSection p0 hide" aria-expanded="false">
                             <div class="col">
                                 <label for="name_img" class="label-name-creation"></label>
                                 <input id="name_img" class="name_img" name="name_img" type="text" placeholder="Untitled">
                             </div>
                             <div class="MethodSelect">
-                                <div>
+                                <div class="center">
                                     <label for="gen_area" class="label-resolution"></label>
                                     <input type="range" id="gen_area" name="gen_area" min="128" max="2000" value="1000">
                                     <output for="gen_area"></output>
                                 </div>
-                                <div >
+                                <div class="center">
                                     <label for="gen_iter" class="label-iteration"></label>
                                     <input type="range" id="gen_iter" name="gen_iter" min="100" max="1000" value="500">
                                     <output for="gen_iter"></output>
                                 </div>
-                                <div >
+                                <div class="center">
                                     <label for="gen_lr" class="label-lr"></label>
                                     <input type="range" id="gen_lr" name="gen_lr" step="0.1" min="0" max="1" value="0.5">
                                     <output for="gen_lr"></output>
                                 </div>
-                                <div >
+                                <div class="center">
                                     <label for="gen_content_weight" class="label-content-weight"></label>
                                     <input type="range" id="gen_content_weight" name="gen_content_weight" step="0.1" min="0" max="10" value="1">
                                     <output for="gen_content_weight"></output>
                                 </div>
-                                <div >
+                                <div class="center">
                                     <label for="gen_stye_weight" class="label-style-weight"></label>
                                     <input type="range" id="gen_style_weight" name="gen_style_weight" min="1" max="500" value="100">
                                     <output for="gen_style_weight"></output>
                                 </div>
-                                <div class="multipleChoiseWithLabel">
+                                <div class="multipleChoiseWithLabel center">
                                     <span class="span-content label-avg-pool"> :</span>
                                     <div>
                                         <input type="radio" id="gen_avg_pool_false" name="gen_avg_pool" value="False"
@@ -158,14 +158,14 @@
                                         <label for="gen_avg_pool_true" class="label-avg-pool-true"></label>
                                     </div>
                                 </div>
-                                <div class="labelledSwitch">
+                                <div class="labelledSwitch center w100">
                                     <span class="span-content label-preserve-color"></span>
                                     <label class="switch contentSwitch">
                                         <input type="checkbox" id="gen_preserve_color" name="gen_preserve_color">
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
-                                <div class="multipleChoiseWithLabel">
+                                <div class="multipleChoiseWithLabel center">
                                     <span class="span-content label-use-adam"></span>
                                     <div>
                                         <input type="radio" id="gen_use_adam_false" name="gen_use_adam" value="False"
@@ -185,12 +185,12 @@
                                     <path d="M0 13.1556L5 6.93334L0 0.711121V13.1556Z" fill="#1C1B1B"/>
                                 </svg>
                             </span>
-                            <button role="button" aria-expanded="false">
+                            <button class="w100" role="button" aria-expanded="false">
                                 <span class="title-snippet">Snippet</span>
                                 <span class="sub-title-snippet">View code behind this magic</span>
                             </button>
                         </h2>
-                        <div id="snipet_section" class="accordionSection hide" aria-expanded="false">
+                        <div id="snipet_section" class="accordionSection p0 hide" aria-expanded="false">
                             <div id="snip-1" class="changeBackground methodLinked snippet">
                                 <h3>
                                     <span class="sr-only for-prism"></span>
@@ -210,7 +210,7 @@
                                 <span class="sub-title-information">Everything about your creation</span>
                             </button>
                         </h2>
-                        <div id="information_section" class="accordionSection hide" aria-expanded="false">
+                        <div id="information_section" class="accordionSection p0 hide" aria-expanded="false">
                             <div class="online_creation_active col hide">
                                 <label for="nameCreation" class="label-name-creation">Name of your creation</label>
                                 <input id="nameCreation"  class="name_img"  type="text">
@@ -263,7 +263,7 @@
                 <span class="text-loading-fail">Veuillez réessayer plus tard</span>
             </div>
             <div class="center">
-                <button id="cancel_generation" class="text-cancel" type="submit"></button>
+                <button id="cancel_generation" class="text-cancel hide" type="submit"></button>
             </div>
         </section>
     </body>

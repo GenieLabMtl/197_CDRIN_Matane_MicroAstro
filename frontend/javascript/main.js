@@ -15,7 +15,7 @@ function initPage(){
     $('.img-generate-submit').on("click", sendParam);
     $('#gen_area, #gen_iter, #gen_lr, #gen_content_weight, #gen_style_weight').on("input", changeInputValue)
     $('#cancel_generation').on("click", cancelGeneration);
-
+    $('.save, .img-generate-submit').attr("disabled", true);
     initInputOutput();
 }
 
@@ -95,6 +95,55 @@ function initInputOutput(){
     }
 }
 
+/****************************** Communication section ******************************/
+
+/**
+ * Send API request
+ * @param operation     GET/POST/PUT/DELETE
+ * @param url           The url where to send the API request
+ * @param data          optionnal data
+ */
+function sendApiRequest(operation, url, data) {
+    let request = new XMLHttpRequest();
+    request.open(operation, backend_url + "/" + url);
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    request.setRequestHeader('Access-Control-Allow-Origin', '*')
+    request.send(JSON.stringify(data));
+    return request;
+}
+
+function sendParam(){
+    let param_id = ".MethodSelect [name=gen_";
+    const param = {
+        area: $(param_id + "area]").val(),
+        iter: $(param_id + "iter]").val(),
+        lr: $(param_id + "lr]").val(),
+        content_weight: $(param_id + "content_weight]").val(),
+        style_weight: $(param_id + "style_weight]").val(),
+        avg_pool: $(param_id + "avg_pool]").val(),
+        preserve_color: $(param_id + "preserve_color]").is(':checked')?'none':'style',
+        use_adam: $(param_id + "use_adam]").val(),
+    };
+    let request = sendApiRequest("POST", "parameter", param);
+    request.onload = () => {
+        if (request.status == 200){
+            getResult(JSON.parse(request.response));
+            $(".bg_loading").addClass("hide");
+        }
+    }
+    $(".bg_loading").removeClass("hide");
+}
+
+function cancelGeneration(){
+    sendApiRequest("POST", "end");
+}
+
+function getResult(src){
+    $("#imgGenerateContainer").empty();
+    $("#imgGenerateContainer").append("<img class='w100' id='generate_image' src='data:image/png;base64,"+ src.src +"'>");
+}
+
+
 /****************************** Unclassed function ******************************/
 
 function addToSelection(event){
@@ -148,50 +197,4 @@ function addToSelection(event){
         })
         reader.readAsDataURL(file);
     }
-}
-
-/**
- * Send API request
- * @param operation     GET/POST/PUT/DELETE
- * @param url           The url where to send the API request
- * @param data          optionnal data
- */
-function sendApiRequest(operation, url, data) {
-    let request = new XMLHttpRequest();
-    request.open(operation, backend_url + "/" + url);
-    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    request.setRequestHeader('Access-Control-Allow-Origin', '*')
-    request.send(JSON.stringify(data));
-    return request;
-}
-
-function sendParam(){
-    let param_id = ".MethodSelect [name=gen_";
-    const param = {
-        area: $(param_id + "area]").val(),
-        iter: $(param_id + "iter]").val(),
-        lr: $(param_id + "lr]").val(),
-        content_weight: $(param_id + "content_weight]").val(),
-        style_weight: $(param_id + "style_weight]").val(),
-        avg_pool: $(param_id + "avg_pool]").val(),
-        preserve_color: $(param_id + "preserve_color]").is(':checked')?'none':'style',
-        use_adam: $(param_id + "use_adam]").val(),
-    };
-    let request = sendApiRequest("POST", "parameter", param);
-    request.onload = () => {
-        if (request.status == 200){
-            getResult(JSON.parse(request.response));
-            $(".bg_loading").addClass("hide");
-        }
-    }
-    $(".bg_loading").removeClass("hide");
-}
-
-function cancelGeneration(){
-    sendApiRequest("POST", "end");
-}
-
-function getResult(src){
-    $("#imgGenerateContainer").empty();
-    $("#imgGenerateContainer").append("<img id='generate_image' src='data:image/png;base64,"+ src.src +"'>");
 }
