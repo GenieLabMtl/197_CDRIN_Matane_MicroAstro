@@ -13,6 +13,7 @@ Suivez les étapes suivantes :
         - ./deploy.sh
 
 2. Dans une invite de commande, à la racine du projet, lancer le serveur python :
-    - python backend/python/server.py
+    - cd backend/python/
+    - python server.py
 
 3. Lancer la page frontend/index.html à l'aide de l'outil de votre choix
