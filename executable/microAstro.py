@@ -6,4 +6,4 @@ os.system('python3 -m pip install --upgrade pip')
 os.system('python3 -m pip install -r requirements/python.txt')
 
 os.chdir('../backend/python/')
-os.system('python server.py')
+os.system('python3 server.py')
