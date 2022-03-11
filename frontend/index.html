@@ -26,7 +26,7 @@
         <script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <!-- personal script -->
-        <script type="application/javascript" src="javascript/translator.js"></script>
+        <!--<script type="application/javascript" src="javascript/translator.js"></script>-->
         <script type="application/javascript" src="javascript/main.js"></script>
 
     </head>
@@ -37,7 +37,7 @@
                 <img src="images/GenielabLogo-BVert_Copyright.png" type="image/x-icon" alt="GénieLab" height="34" style="margin-left: 10px;">
             </div>
             <div class="global">
-                <select name="chooseLang" id="chooseLang"></select>
+                <select name="chooseLang" id="chooseLang" class="hide"></select>
                 <button class="save" aria-disabled="true" disabled>
                     <svg width="24" height="29" viewBox="0 0 24 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M23.6663 10H16.9997V0H6.99968V10H0.333008L11.9997 21.6667L23.6663 10ZM10.333 13.3333V3.33333H13.6663V13.3333H15.6163L11.9997 16.95L8.38301 13.3333H10.333ZM0.333008 25H23.6663V28.3333H0.333008V25Z" fill="white"/>
@@ -54,7 +54,7 @@
                 <!-- initial main content -->
                 <div class="row">
                     <div id="step-0" class="col center">
-                        <span class="content-button"></span>
+                        <span class="content-button">Image :</span>
                         <button id="content_toSelect" class="img_toSelect p0 resize" type="button" data-cat-id="0">
                             <label for="uploadBtn0">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="128" height="128" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill-opacity="0" fill="#75beda"></path><g fill="#736ae4"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM85.94625,58.43297c-1.89722,0.02966 -3.41223,1.58976 -3.38625,3.48703v20.64h-20.64c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h20.64v20.64c-0.01754,1.24059 0.63425,2.39452 1.7058,3.01993c1.07155,0.62541 2.39684,0.62541 3.46839,0c1.07155,-0.62541 1.72335,-1.77935 1.7058,-3.01993v-20.64h20.64c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058h-20.64v-20.64c0.01273,-0.92983 -0.35149,-1.82522 -1.00967,-2.48214c-0.65819,-0.65692 -1.55427,-1.01942 -2.48408,-1.00489z"></path></g></g></svg>
@@ -63,7 +63,7 @@
                         </button>
                     </div>
                     <div id="step-1" class="col center">
-                        <span class="style-button"></span>
+                        <span class="style-button">Style :</span>
                         <button id="style_toSelect" class="img_toSelect p0 resize" type="button" data-cat-id="1">
                             <label for="uploadBtn1">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="128" height="128" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill-opacity="0" fill="#75beda"></path><g fill="#736ae4"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM85.94625,58.43297c-1.89722,0.02966 -3.41223,1.58976 -3.38625,3.48703v20.64h-20.64c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h20.64v20.64c-0.01754,1.24059 0.63425,2.39452 1.7058,3.01993c1.07155,0.62541 2.39684,0.62541 3.46839,0c1.07155,-0.62541 1.72335,-1.77935 1.7058,-3.01993v-20.64h20.64c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058h-20.64v-20.64c0.01273,-0.92983 -0.35149,-1.82522 -1.00967,-2.48214c-0.65819,-0.65692 -1.55427,-1.01942 -2.48408,-1.00489z"></path></g></g></svg>
@@ -94,12 +94,17 @@
                                 </svg>
                             </span>
                             <button class="open-accordion w100" role="button" aria-expanded="true">
-                                <span class="title-activity"></span>
-                                <span class="sub-title-activity"></span>
+                                <span class="title-activity">Instructions</span>
+                                <span class="sub-title-activity">Étape par étape et lexique</span>
                             </button>
                         </h2>
                         <div id="activity_section" class="accordionSection p0" aria-atomic="true">
-                            <ul class="complete-instructions"></ul>
+                            <ul class="complete-instructions">
+                                <b>Étape 1</b>: Choisir l'image à styliser dans Content.<br><br>
+                                <b>Étape 2</b>: Sélectionner le style à imiter dans Style.<br><br>
+                                <b>Étape 3</b>: Donner un nom à votre création puis assigner les paramètres pour la réaliser.<br><br>
+                                <b>Étape 4</b>: Cliquer sur Générer.<br><br>
+                            </ul>
                             <div id="snip-0" class="snippet">
                                 <h3 class="snippet-generique-h3"></h3>
                                 <ul class="ul-complete-description-generic-param"></ul>
@@ -113,8 +118,8 @@
                                 </svg>
                             </span>
                             <button class="w100" role="button" aria-expanded="false">
-                                <span class="title-parameter"></span>
-                                <span class="sub-title-parameters"></span>
+                                <span class="title-parameter">Paramètres</span>
+                                <span class="sub-title-parameters">Créez ici</span>
                             </button>
                         </h2>
                         <div id="parameter_section" class="accordionSection p0 hide" aria-expanded="false">
@@ -124,58 +129,58 @@
                             </div>
                             <div class="MethodSelect">
                                 <div class="center">
-                                    <label for="gen_area" class="label-resolution"></label>
+                                    <label for="gen_area" class="label-resolution">Résolution :</label>
                                     <input type="range" id="gen_area" name="gen_area" min="128" max="2000" value="1000">
                                     <output for="gen_area"></output>
                                 </div>
                                 <div class="center">
-                                    <label for="gen_iter" class="label-iteration"></label>
+                                    <label for="gen_iter" class="label-iteration">Itération :</label>
                                     <input type="range" id="gen_iter" name="gen_iter" min="100" max="1000" value="500">
                                     <output for="gen_iter"></output>
                                 </div>
                                 <div class="center">
-                                    <label for="gen_lr" class="label-lr"></label>
+                                    <label for="gen_lr" class="label-lr">Pas d'apprentissage :</label>
                                     <input type="range" id="gen_lr" name="gen_lr" step="0.1" min="0" max="1" value="0.5">
                                     <output for="gen_lr"></output>
                                 </div>
                                 <div class="center">
-                                    <label for="gen_content_weight" class="label-content-weight"></label>
+                                    <label for="gen_content_weight" class="label-content-weight">Réduction d'image :</label>
                                     <input type="range" id="gen_content_weight" name="gen_content_weight" step="0.1" min="0" max="10" value="1">
                                     <output for="gen_content_weight"></output>
                                 </div>
                                 <div class="center">
-                                    <label for="gen_stye_weight" class="label-style-weight"></label>
+                                    <label for="gen_stye_weight" class="label-style-weight">Réduction de style :</label>
                                     <input type="range" id="gen_style_weight" name="gen_style_weight" min="1" max="500" value="100">
                                     <output for="gen_style_weight"></output>
                                 </div>
                                 <div class="multipleChoiseWithLabel center">
-                                    <span class="span-content label-avg-pool"> :</span>
+                                    <span class="span-content label-avg-pool">Échantillonage  :</span>
                                     <div>
                                         <input type="radio" id="gen_avg_pool_false" name="gen_avg_pool" value="False"
                                                checked>
-                                        <label for="gen_avg_pool_false" class="label-avg-pool-false"></label>
+                                        <label for="gen_avg_pool_false" class="label-avg-pool-false">Moyen</label>
                                         <input type="radio" id="gen_avg_pool_true" name="gen_avg_pool" value="True">
-                                        <label for="gen_avg_pool_true" class="label-avg-pool-true"></label>
+                                        <label for="gen_avg_pool_true" class="label-avg-pool-true">Maximum</label>
                                     </div>
                                 </div>
                                 <div class="labelledSwitch center w100">
-                                    <span class="span-content label-preserve-color"></span>
+                                    <span class="span-content label-preserve-color">Préserver les couleurs :</span>
                                     <label class="switch contentSwitch">
                                         <input type="checkbox" id="gen_preserve_color" name="gen_preserve_color">
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
                                 <div class="multipleChoiseWithLabel center">
-                                    <span class="span-content label-use-adam"></span>
+                                    <span class="span-content label-use-adam">Optimisation :</span>
                                     <div>
                                         <input type="radio" id="gen_use_adam_false" name="gen_use_adam" value="False"
                                                checked>
-                                        <label for="gen_use_adam_false" class="label-use-adam-false"></label>
+                                        <label for="gen_use_adam_false" class="label-use-adam-false">Adam</label>
                                         <input type="radio" id="gen_use_adam_true" name="gen_use_adam" value="True">
-                                        <label for="gen_use_adam_true" class="label-use-adam-true"></label>
+                                        <label for="gen_use_adam_true" class="label-use-adam-true">LBFGS</label>
                                     </div>
                                 </div>
-                                <button class="bt gen_submit_bt large-bt img-generate-submit form" disabled></button>
+                                <button class="bt gen_submit_bt large-bt img-generate-submit form" disabled>Générer</button>
                             </div>
                         </div>
                         <!-- snipet section -->
@@ -186,8 +191,8 @@
                                 </svg>
                             </span>
                             <button class="w100" role="button" aria-expanded="false">
-                                <span class="title-snippet">Snippet</span>
-                                <span class="sub-title-snippet">View code behind this magic</span>
+                                <span class="title-snippet">Explications</span>
+                                <span class="sub-title-snippet">Comment ça fonctionne ?</span>
                             </button>
                         </h2>
                         <div id="snipet_section" class="accordionSection p0 hide" aria-expanded="false">
@@ -207,26 +212,26 @@
                             </span>
                             <button role="button" aria-expanded="false">
                                 <span class="title-information">Information</span>
-                                <span class="sub-title-information">Everything about your creation</span>
+                                <span class="sub-title-information">Tout sur votre création</span>
                             </button>
                         </h2>
                         <div id="information_section" class="accordionSection p0 hide" aria-expanded="false">
                             <div class="online_creation_active col hide">
-                                <label for="nameCreation" class="label-name-creation">Name of your creation</label>
+                                <label for="nameCreation" class="label-name-creation">Nom de votre création</label>
                                 <input id="nameCreation"  class="name_img"  type="text">
 
-                                <label for="metaDescription" class="label-description-creation">Some description can be nice</label>
+                                <label for="metaDescription" class="label-description-creation">Une certaine inscription peut être sympa</label>
                                 <textarea id="metaDescription" name="metaDescription" maxlength="254" rows="10"></textarea>
 
-                                <label for="creatorName" class="label-creator-creation">Creator</label>
+                                <label for="creatorName" class="label-creator-creation">Createur</label>
                                 <input id="creatorName" type="text" class="" value="{user name}" readonly>
 
-                                <label for="createDate" class="label-date-creation">Created on</label>
+                                <label for="createDate" class="label-date-creation">Créé le</label>
                                 <input id="createDate" type="text" value="{Date}" readonly>
 
                                 <hr class="line">
 
-                                <h3 class="sub-title-what-has-been-used">What has been used</h3>
+                                <h3 class="sub-title-what-has-been-used">Ce qui a été utilisé</h3>
                                 <p id="used_method"></p>
                                 <ul id="used_param">
 
@@ -234,12 +239,12 @@
 
                                 <hr class="line">
 
-                                <h3 class="sub-title-where-created">Where was this created</h3>
+                                <h3 class="sub-title-where-created">Où cela a-t-il été créé</h3>
                                 <p id="user_location">Ets worshop - ID:02</p>
 
                                 <hr class="line">
 
-                                <h3 class="sub-title-how-find-cloud">How to find it in the cloud</h3>
+                                <h3 class="sub-title-how-find-cloud">Comment le trouver dans le cloud</h3>
                                 <p class="img_id"><span class="text-id-pp">ID:</span><span id="img_id_concrete">8076</span></p>
                             </div>
                             <div class="offline_creation">
@@ -263,7 +268,7 @@
                 <span class="text-loading-fail">Veuillez réessayer plus tard</span>
             </div>
             <div class="center">
-                <button id="cancel_generation" class="text-cancel hide" type="submit"></button>
+                <button id="cancel_generation" class="text-cancel hide" type="submit">Annuler</button>
             </div>
         </section>
     </body>

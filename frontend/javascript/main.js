@@ -1,4 +1,4 @@
-const translator = new Translator(0);
+//const translator = new Translator(0);
 const backend_url = "http://localhost:8080";
 
 $(document).ready(initPage);

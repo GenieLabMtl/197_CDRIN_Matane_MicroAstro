@@ -12,7 +12,7 @@ style ='../images/style.png'
 content ='../images/content.png'
 
 def save_image(name, src, format):
-    file = '../images/' + name + '.'+ format
+    file = './images/' + name + '.'+ format
     with open(file, 'wb') as fh:
         fh.write(base64.b64decode(src))
 
