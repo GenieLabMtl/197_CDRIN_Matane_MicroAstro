@@ -122,7 +122,7 @@ function sendParam(){
         style_weight: $(param_id + "style_weight]").val(),
         avg_pool: $(param_id + "avg_pool]").val(),
         preserve_color: $(param_id + "preserve_color]").is(':checked')?'none':'style',
-        use_adam: $(param_id + "use_adam]").val(),
+        adam: $(param_id + "adam]").val(),
     };
     let request = sendApiRequest("POST", "parameter", param);
     request.onload = () => {

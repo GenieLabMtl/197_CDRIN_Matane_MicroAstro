@@ -5,11 +5,14 @@ import base64
 import os
 import requests
 
+from style_transfer.learn import StyleTransfer
+from PIL import Image
+
 app = Flask(__name__)
 CORS(app, resources=r'/api/*')
 
-style ='../images/style.png'
-content ='../images/content.png'
+style = './images/style.png'
+content = './images/content.png'
 
 def save_image(name, src, format):
     file = './images/' + name + '.'+ format
@@ -17,11 +20,23 @@ def save_image(name, src, format):
         fh.write(base64.b64decode(src))
 
 def start_execution(decode_data, response):
-    command = 'style-transfer ' + content + ' ' + style
-    for param in decode_data:
-        command += ' --'+param + ' ' + decode_data[param]
-    os.system(command)
-    with open('../images/artwork.png', "rb") as fh:
+    st = StyleTransfer(
+        lr=float(decode_data['lr']), 
+        content_weight=int(decode_data['content_weight']), 
+        style_weight=int(decode_data['style_weight']), 
+        avg_pool= decode_data['avg_pool'] == True,
+        preserve_color=decode_data['preserve_color'],
+        adam=decode_data['adam'] == True
+        )
+    
+    artwork = st(
+        Image.open(content).convert('RGB'),
+        Image.open(style).convert('RGB'), 
+        area=int(decode_data['area']),
+        iter=int(decode_data['iter'])
+        )
+    artwork.save('./images/artwork.png')
+    with open('./images/artwork.png', "rb") as fh:
         artwork = base64.b64encode(fh.read()).decode('utf-8')
         return {'src': artwork}
 

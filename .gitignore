@@ -350,4 +350,5 @@ MigrationBackup/
 .ionide/
 
 backend/python/prism/
-backend/images/
+backend/python/images/
+backend/python/runs/
