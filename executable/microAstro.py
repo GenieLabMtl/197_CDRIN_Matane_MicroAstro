@@ -1,12 +1,22 @@
 #!/usr/bin/env python3
-import os
-import platform
+from os import chdir, system
+from sys import platform, exit
 
-os.chdir('../documentation/')
-os.system('python3 -m pip install --upgrade pip')
-os.system('python3 -m pip install --upgrade setuptools')
-os.system('python3 -m pip install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html')
-os.system('python3 -m pip install -r requirements/python.txt')
+def cmd(option):
+    system('python3 -m pip install ' + option)
 
-os.chdir('../backend/python/')
-os.system('python3 server.py')
+chdir('../documentation/')
+cmd('-r requirements/upgrade.txt')
+if platform == 'linux' or platform == 'linux2':
+    cmdTorch = 'torch==1.7.1+cpu torchvision==0.8.2+cpu -f https://download.pytorch.org/whl/torch_stable.html'
+elif platform == 'darwin' :
+    cmdTorch = 'torch>=1.7.0 torchvision>=0.8.2'
+elif platform == 'win32' :
+    cmdTorch = 'torch>=1.7.0 torchvision>=0.8.2'
+else :
+    exit()
+cmd(cmdTorch)
+cmd('-r requirements/python.txt')
+
+chdir('../backend/python/')
+system('python3 server.py')

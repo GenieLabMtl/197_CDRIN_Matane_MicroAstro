@@ -1,4 +1,4 @@
-git+https://github.com/moritztng/prism.git --install-option='-q'
 Flask
 Flask-Cors
 requests
+git+https://github.com/moritztng/prism.git --install-option='-q'
