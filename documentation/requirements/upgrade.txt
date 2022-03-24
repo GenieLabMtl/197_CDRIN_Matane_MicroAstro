@@ -1,3 +1,3 @@
 pip --install-option='--upgrade'
 setuptools --install-option='--upgrade'
-tensorflow>=2.5.0 --install-option='--upgrade'
+wheel
