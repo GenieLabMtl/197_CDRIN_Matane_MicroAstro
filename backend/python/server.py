@@ -36,7 +36,7 @@ def start_execution(decode_data, response):
         area=int(decode_data['area']),
         iter=int(decode_data['iter'])
         )
-    name = '../generated_images/artwork' + datetime.now().strftime("%d/%m/%Y_%H:%M:%S") + '.png'
+    name = '../generated_images/artwork' + datetime.now().strftime("%Y%m%d_%H:%M:%S") + '.png'
     artwork.save(name)
     with open(name, "rb") as fh:
         artwork = base64.b64encode(fh.read()).decode('utf-8')
