@@ -4,7 +4,7 @@ from flask_cors import CORS, cross_origin
 import base64
 import os
 import requests
-from datetime import date
+from datetime import datetime
 
 from style_transfer.learn import StyleTransfer
 from PIL import Image
