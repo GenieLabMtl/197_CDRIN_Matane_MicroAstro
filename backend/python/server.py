@@ -4,6 +4,7 @@ from flask_cors import CORS, cross_origin
 import base64
 import os
 import requests
+from datetime import date
 
 from style_transfer.learn import StyleTransfer
 from PIL import Image
@@ -35,8 +36,9 @@ def start_execution(decode_data, response):
         area=int(decode_data['area']),
         iter=int(decode_data['iter'])
         )
-    artwork.save('./images/artwork.png')
-    with open('./images/artwork.png', "rb") as fh:
+    name = '../generated_images/artwork' +date.now().strftime("%d/%m/%Y_%H:%M:%S") + '.png'
+    artwork.save(name)
+    with open(name, "rb") as fh:
         artwork = base64.b64encode(fh.read()).decode('utf-8')
         return {'src': artwork}
 
