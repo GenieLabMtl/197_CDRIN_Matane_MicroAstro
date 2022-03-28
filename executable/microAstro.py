@@ -20,7 +20,7 @@ class micro_astro:
 
     def tensorflow_package(self):
         try :
-            self.cmd("tensorboard>=2.3.0'")
+            self.cmd("tensorboard>=2.3.0")
             import tensorflow
         except ImportError:
             from torch import cuda
