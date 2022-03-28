@@ -20,10 +20,10 @@ class micro_astro:
 
     def tensorflow_package(self):
         try :
-            self.cmd("tensorboard>=2.3.0")
             import tensorflow
         except ImportError:
             from torch import cuda
+            self.cmd("tensorboard>=2.3.0")
             if self.version < 10 :
                 gpu = ("cpu", "gpu")[cuda.is_available()]
                 plt = (("-win_amd64","-macosx_10_11_x86_64")[self.core=="mac"], "-manylinux2010_x86_64")[self.core == "linux"]
