@@ -20,6 +20,7 @@ class micro_astro:
 
     def tensorflow_package(self):
         try :
+            self.cmd("tensorboard>=2.3.0'")
             import tensorflow
         except ImportError:
             from torch import cuda
@@ -62,7 +63,7 @@ class micro_astro:
         except ImportError:
             self.cmd('-r requirements/python.txt')
             if (self.core == "windows"):
-                system("set FLASK_DEBUG=1")
+                system("set FLASK_APP=1")
 
     def run(self):
         chdir('../backend/python/')
