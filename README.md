@@ -41,7 +41,7 @@ Suivez les étapes suivantes :
         - Enfin installez **Python** avec la commande suivante :
             - sudo sudo apt-get install python
 
-- Pour Macos :
+- Pour macOS :
     1. Ouvrir un terminal :
         - Dans le Finder, rendez-vous au dossier **197_CDRIN_Matane_MicroAstro** que vous avez décompressez
         - Faire clic droit sur le dossier
@@ -64,7 +64,7 @@ Suivez les étapes suivantes :
         Linux et Macos:
         - python microAstro.py
 - Ouvrir le site Web
-    1. Grâce à l'explorateur de fichier sur Windows ou Finder sur Macos, ouvrez le dossier *frontend* puis :
+    1. Grâce à l'explorateur de fichier sur Windows ou Finder sur macOS, ouvrez le dossier *frontend* puis :
         - Double-cliquez sur le fichier **index.html**
 - L'interface de type web de l'application va s'ouvrir.
 - Amusez-vous !
