@@ -27,6 +27,7 @@ function initPage(){
 * @param target     the target element is the title linked with the section
 */
 function openAccordion(target){
+    console.log(target.parent())
     closeAccordion($(".open-accordion"));
     let parent = target.parent();
     let section = $("#"+ parent.attr("id") + "_section")
@@ -60,11 +61,12 @@ function closeAccordion(target){
 * In another words, it open and close the accordion.
 */
 function toggleAccordion(){
-
-    if($(this).attr("aria-expanded") === "false"){
-        openAccordion($(this));
-    } else {
-        closeAccordion($(this));
+    if($(this).attr("class").indexOf("bt") == -1){
+        if($(this).attr("aria-expanded") === "false"){
+            openAccordion($(this));
+        } else {
+            closeAccordion($(this));
+        }
     }
 }
 
@@ -114,6 +116,7 @@ function sendApiRequest(operation, url, data) {
 }
 
 function sendParam(){
+    $('.save').attr("disabled", true);
     let param_id = ".MethodSelect [name=gen_";
     const param = {
         area: $(param_id + "area]").val(),
