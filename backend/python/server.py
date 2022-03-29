@@ -19,8 +19,17 @@ def save_image(name, src, format):
     file = './images/' + name + '.'+ format
     with open(file, 'wb') as fh:
         fh.write(base64.b64decode(src))
+        im = convert_to_RGB(Image.open(file))
+        im.save('./images/'+name+'.png')
+
+def convert_to_RGB(image):
+    if image.mode != 'RGB':
+        image = image.convert('RGB')
+    return image
 
 def start_execution(decode_data, response):
+    c = convert_to_RGB(Image.open(content))
+    s = convert_to_RGB(Image.open(style))
     st = StyleTransfer(
         lr=float(decode_data['lr']), 
         content_weight=int(decode_data['content_weight']), 
@@ -29,15 +38,15 @@ def start_execution(decode_data, response):
         preserve_color=decode_data['preserve_color'],
         adam=decode_data['adam'] == True
         )
-    
     artwork = st(
-        Image.open(content).convert('RGB'),
-        Image.open(style).convert('RGB'), 
+        c,
+        s, 
         area=int(decode_data['area']),
         iter=int(decode_data['iter'])
         )
-    name = '../../generated_images/artwork' + datetime.now().strftime("%Y%m%d_%H:%M:%S") + '.png'
-    artwork.save(name)
+    artwork = convert_to_RGB(artwork)
+    name = '../../generated_images/artwork' + datetime.now().strftime("%Y%m%d_%H%M%S") + '.png'
+    artwork.save(name, 'png')
     with open(name, "rb") as fh:
         artwork = base64.b64encode(fh.read()).decode('utf-8')
         return {'src': artwork}
