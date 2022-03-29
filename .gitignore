@@ -352,3 +352,7 @@ MigrationBackup/
 backend/python/prism/
 backend/python/images/
 backend/python/runs/
+runs/
+microAstro/
+generated_images/*.png
+executable/__pycache__

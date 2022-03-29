@@ -15,6 +15,7 @@ function initPage(){
     $('.img-generate-submit').on("click", sendParam);
     $('#gen_area, #gen_iter, #gen_lr, #gen_content_weight, #gen_style_weight').on("input", changeInputValue)
     $('#cancel_generation').on("click", cancelGeneration);
+    $('.save').on("click", dataURLtoFile);
     $('.save, .img-generate-submit').attr("disabled", true);
     initInputOutput();
 }
@@ -140,9 +141,9 @@ function cancelGeneration(){
 
 function getResult(src){
     $("#imgGenerateContainer").empty();
-    $("#imgGenerateContainer").append("<img class='w100' id='generate_image' src='data:image/png;base64,"+ src.src +"'>");
+    $("#imgGenerateContainer").append("<img id='generate_image' src='data:image/png;base64,"+ src.src +"'>");
+    $('.save').attr("disabled", false);
 }
-
 
 /****************************** Unclassed function ******************************/
 
@@ -197,4 +198,20 @@ function addToSelection(event){
         })
         reader.readAsDataURL(file);
     }
+}
+
+function dataURLtoFile() {
+    let dataurl = $('#generate_image').attr('src');
+    let filename = 'artwork.png';
+    var arr = dataurl.split(','),
+        mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]), 
+        n = bstr.length, 
+        u8arr = new Uint8Array(n);
+        
+    while(n--){
+        u8arr[n] = bstr.charCodeAt(n);
+    }
+    
+    saveAs(new File([u8arr], filename, {type:mime}));
 }

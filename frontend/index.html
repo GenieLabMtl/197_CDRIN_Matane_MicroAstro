@@ -24,6 +24,7 @@
 
         <!-- Script -->
         <script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
 
         <!-- personal script -->
         <!--<script type="application/javascript" src="javascript/translator.js"></script>-->
@@ -52,7 +53,7 @@
         <section>
             <article class="col justify center h100">
                 <!-- initial main content -->
-                <div class="row">
+                <div class="row h50">
                     <div id="step-0" class="col center">
                         <span class="content-button">Image :</span>
                         <button id="content_toSelect" class="img_toSelect p0 resize" type="button" data-cat-id="0">
@@ -73,9 +74,8 @@
                     </div>
                 </div>
                 <!-- Section of image generated -->
-                <div class="col">
-
-                    <div id="imgGenerateContainer" class="imgGenerateContainer resize">
+                <div class="col h50">
+                    <div id="imgGenerateContainer" class="imgGenerateContainer">
                     </div>
                 </div>
             </article>
@@ -104,6 +104,7 @@
                                 <b>Étape 2</b>: Sélectionner le style à imiter dans Style.<br><br>
                                 <b>Étape 3</b>: Donner un nom à votre création puis assigner les paramètres pour la réaliser.<br><br>
                                 <b>Étape 4</b>: Cliquer sur Générer.<br><br>
+                                <b>Étape 5</b>: Retrouver l'image généré dans le dossier <i>generated_images</i><br><br>
                             </ul>
                             <div id="snip-0" class="snippet">
                                 <h3 class="snippet-generique-h3"></h3>

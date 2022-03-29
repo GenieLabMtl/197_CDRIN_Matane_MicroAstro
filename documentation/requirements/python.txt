@@ -1,5 +1,4 @@
 markupsafe==2.0.1
 Flask
 Flask-Cors
-requests
 git+https://github.com/moritztng/prism.git --install-option='-q'
