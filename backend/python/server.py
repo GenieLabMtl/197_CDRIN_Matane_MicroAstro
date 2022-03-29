@@ -49,7 +49,7 @@ def start_execution(decode_data, response):
     artwork.save(name, 'png')
     with open(name, "rb") as fh:
         artwork = base64.b64encode(fh.read()).decode('utf-8')
-        return {'src': artwork}
+        return jsonify({'src': artwork})
 
 @app.route('/content', methods=["POST"])
 @cross_origin()
