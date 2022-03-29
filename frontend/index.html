@@ -75,7 +75,7 @@
                 <!-- Section of image generated -->
                 <div class="col">
 
-                    <div id="imgGenerateContainer" class="w100 imgGenerateContainer">
+                    <div id="imgGenerateContainer" class="imgGenerateContainer resize">
                     </div>
                 </div>
             </article>
@@ -128,34 +128,34 @@
                                 <input id="name_img" class="name_img" name="name_img" type="text" placeholder="Untitled">
                             </div>
                             <div class="MethodSelect">
-                                <div class="center">
+                                <div class="center w100">
                                     <label for="gen_area" class="label-resolution">Résolution :</label>
                                     <input type="range" id="gen_area" name="gen_area" min="128" max="2000" value="1000">
-                                    <output for="gen_area"></output>
+                                    <output for="gen_area" class="justify"></output>
                                 </div>
-                                <div class="center">
+                                <div class="center w100">
                                     <label for="gen_iter" class="label-iteration">Itération :</label>
                                     <input type="range" id="gen_iter" name="gen_iter" min="100" max="1000" value="500">
-                                    <output for="gen_iter"></output>
+                                    <output for="gen_iter" class="justify"></output>
                                 </div>
-                                <div class="center">
+                                <div class="center w100">
                                     <label for="gen_lr" class="label-lr">Pas d'apprentissage :</label>
                                     <input type="range" id="gen_lr" name="gen_lr" step="0.1" min="0" max="1" value="0.5">
-                                    <output for="gen_lr"></output>
+                                    <output for="gen_lr" class="justify"></output>
                                 </div>
-                                <div class="center">
+                                <div class="center w100">
                                     <label for="gen_content_weight" class="label-content-weight">Réduction d'image :</label>
                                     <input type="range" id="gen_content_weight" name="gen_content_weight" step="0.1" min="0" max="10" value="1">
-                                    <output for="gen_content_weight"></output>
+                                    <output for="gen_content_weight" class="justify"></output>
                                 </div>
-                                <div class="center">
+                                <div class="center w100">
                                     <label for="gen_stye_weight" class="label-style-weight">Réduction de style :</label>
                                     <input type="range" id="gen_style_weight" name="gen_style_weight" min="1" max="500" value="100">
-                                    <output for="gen_style_weight"></output>
+                                    <output for="gen_style_weight" class="justify"></output>
                                 </div>
-                                <div class="multipleChoiseWithLabel center">
+                                <div class="multipleChoiseWithLabel center w100">
                                     <span class="span-content label-avg-pool">Échantillonage  :</span>
-                                    <div>
+                                    <div class="justify">
                                         <input type="radio" id="gen_avg_pool_false" name="gen_avg_pool" value="False"
                                                checked>
                                         <label for="gen_avg_pool_false" class="label-avg-pool-false">Moyen</label>
@@ -165,14 +165,16 @@
                                 </div>
                                 <div class="labelledSwitch center w100">
                                     <span class="span-content label-preserve-color">Préserver les couleurs :</span>
-                                    <label class="switch contentSwitch">
-                                        <input type="checkbox" id="gen_preserve_color" name="gen_preserve_color">
-                                        <span class="slider round"></span>
-                                    </label>
+                                    <div class="justify">
+                                        <label class="switch contentSwitch">
+                                            <input type="checkbox" id="gen_preserve_color" name="gen_preserve_color">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="multipleChoiseWithLabel center">
+                                <div class="multipleChoiseWithLabel center w100">
                                     <span class="span-content label-use-adam">Optimisation :</span>
-                                    <div>
+                                    <div class="justify">
                                         <input type="radio" id="gen_adam_false" name="gen_adam" value="False"
                                                checked>
                                         <label for="gen_adam_false" class="label-use-adam-false">Adam</label>
