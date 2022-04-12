@@ -61,15 +61,16 @@ Suivez les étapes suivantes :
         - Allez à *Services*, puis sélectionner *Nouveau terminal au dossier*
     2. Installer **Git** :
         - Mettre à jour les paquets existants en entrant dans le terminal :
-            - sudo apt-get update
+            - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            - brew update
          - Installez **Git** avec la commande suivante :
-            - sudo apt-get install git
+            - brew git
          - Testez l'installation avec la ligne suivante :
             - git --version
          - Si aucune erreur ne s'affiche, félicitation ! 
     4. Installer **Python**
         - Enfin installez **Python** avec la commande suivante :
-            - sudo sudo apt-get install python
+            - brew install python@3.9
 
 ## Utiliser le projet
 Suivez les étapes suivantes :
