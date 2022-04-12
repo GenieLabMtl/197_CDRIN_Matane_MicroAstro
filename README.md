@@ -79,10 +79,10 @@ Suivez les étapes suivantes :
         Avec un terminal ouvert dans le dossier **197_CDRIN_Matane_MicroAstro**, écrire :
         - cd executable
     2. Lancer le programme *microAstro.py*:
-        Windows :
-        - py.exe microAstro.py
-        Linux et Macos:
-        - python microAstro.py
+        - Windows :
+            - py.exe microAstro.py
+        - Linux et Macos:
+            - python microAstro.py
 - Ouvrir le site Web
     1. Grâce à l'explorateur de fichier sur Windows ou Finder sur macOS, ouvrez le dossier *frontend* puis :
         - Double-cliquez sur le fichier **index.html**
